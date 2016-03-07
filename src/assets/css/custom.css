@@ -1,0 +1,33 @@
+﻿/* code by fj */
+.fj-piclist {
+	display: block;
+	padding: 10px 0 0 82px;
+}
+.fj-piclist li {
+	padding: 0 !important;
+  overflow: visible !important;
+	position: relative;
+	float: left;
+	margin: 0 10px 10px 0;
+}
+.fj-piclist li img {
+	height: 100px;
+}
+.fj-piclist li .fj-delicon {
+  	display: none;
+  	width: 18px;
+  	height: 18px;
+    border-radius: 9px;
+  	position: absolute;
+  	top: -3px;
+  	right: -3px;
+  	color: #fff;
+    background: #f00;
+  	font-size: 18px;
+  	line-height: 16px;
+  	text-align: center;
+  	cursor: pointer;
+}
+.fj-piclist li:hover .fj-delicon { 
+	display:block; 
+}
