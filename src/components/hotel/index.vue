@@ -1,13 +1,13 @@
 <template>
-  <<div id="main-container">
+  <div id="main-container">
     <div class="sidebar">
       <ul>
-        <li><a href="javascript:;">房态概览</a></li>
+        <li :class="{'on':isurl('/hotel/roomstatus')}"><a href="javascript:;"  v-link="{ path: '/hotel/roomstatus' }">房态概览</a></li>
         <li><a href="javascript:;">查询统计</a></li>
-        <li class="on"><a v-link="{ path: '/hotel/setting' }">客房管理</a></li>
+        <li :class="{'on':isurl('/hotel/roomlist')}"><a href="javascript:;" v-link="{ path: '/hotel/roomlist' }">客房管理</a></li>
       </ul>
     </div>
-    <router-view transition-mode="out-in" keep-alive></router-view>
+    <router-view transition-mode="out-in"></router-view>
   </div>
 </template>
 
@@ -15,8 +15,11 @@
 export default {
   data () {
     return {
-      msg: 'bbb!'
+      
     }
+  },
+  methods:{
+    isurl:require('../common/isurl')
   }
 }
 </script>

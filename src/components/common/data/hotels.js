@@ -1,0 +1,39 @@
+module.exports = [                   
+  {
+    hotelId : "2222",
+    hotelName:"翰林院",
+    types:[
+      {
+        typeId:"1",
+        typeName:"套房yoyo",
+        rooms:[
+          {
+            "roomId":"1",
+            "roomName":"水龙",
+            "price":"888"
+          },
+          {
+            "roomId":"2",
+            "roomName":"呵呵呵",
+            "price":"666"
+          },
+        ]
+      },
+      {
+        typeId:"2",
+        typeName:"花园房",
+        rooms:[
+          {
+            "roomId":"4",
+            "roomName":"嗟吁",
+            "price":"666"
+          },
+        ]
+      }
+    ]
+  },
+  {
+    hotelId: "333",
+    hotelName:"四合院"
+  }
+]

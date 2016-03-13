@@ -1,0 +1,27 @@
+module.exports={
+  total:1,
+  rows:[
+    {
+      "id":"1",       
+      "name":"张1",      
+      "phone":"13547698255",
+      "cityName":"成都",
+      "orderCount":10,   
+      "totalPrice":5000,    
+      "idNum":"证件号码",
+      "lastCheckInDate":"2016-02-19", 
+      "lastNights":"1"
+    },
+    {
+      "id":"2",       
+      "name":"张2",      
+      "phone":"13547698255",
+      "cityName":"成都",
+      "orderCount":10,   
+      "totalPrice":5000,    
+      "idNum":"证件号码",
+      "lastCheckInDate":"2016-02-19", 
+      "lastNights":"1"
+    }
+  ]
+}

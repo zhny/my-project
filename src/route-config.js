@@ -4,8 +4,22 @@ export function configRouter (router) {
     '/hotel': {
       component: require('./components/hotel/index.vue'),
       subRoutes: {
-        'setting': {
-          component: require('./components/hotel/setting.vue')
+        'roomstatus': {
+          component: require('./components/hotel/roomstatus.vue')
+        },
+        'roomlist': {
+          component: require('./components/hotel/roomlist.vue')
+        },
+        'addroom': {
+          component: require('./components/hotel/addroom.vue')
+        }
+      }
+    },
+    '/customer': {
+      component: require('./components/customer/index.vue'),
+      subRoutes: {
+        'infos': {
+          component: require('./components/customer/infos.vue')
         }
       }
     }

@@ -1,4 +1,11 @@
-﻿.ical{margin:0px -1px -1px -1px;}
+﻿/*
+ * iCal v1.0 Stylesheet
+ * Copyright (c) 2013 Kevin Liam
+ * Date:2013.6.3 14:33
+*/
+ 
+/*iCal for table*/
+.ical{margin:0px -1px -1px -1px;}
 .ical .td,.ical th{padding:0; vertical-align:top; white-space:nowrap}
 .ical table{border-collapse:collapse; border-spacing:0; width:100%; border:1px solid #ddd;}
 .ical th,.ical td{border:1px solid #bce5c6; -webkit-user-select:none; -moz-user-select:-moz-none; -webkit-user-drag:none; cursor:default}
@@ -18,7 +25,14 @@
 .ical ul.d{border-left:1px solid #dddddd;}
 .ical ul.d li{height:60px; border-right:1px solid #dddddd; border-bottom:1px solid #dddddd; width: 100px;}
 .selecteddate .ical ul.d li{width: 70px;}
+
+
+
+
 .moremonth .ical ul.d li{ height: 77px;}
+
+
+
 .ical ul.d li i{display:block; padding:2px 4px 5px 0px; text-align:right; font-style:normal; font-family:Lato,"Open Sans", arial; font-size:12px; color:#333; cursor:default; position:relative;}
 .ical ul.d li i.holiday {padding-top:0; border-top:2px solid #00b181;}
 .ical ul.d li.igray i.holiday {border-top-color:#bbb;}
@@ -37,7 +51,6 @@
 .ical ul.d li.ui-selecting,.ical ul.d li.ui-selected,.ical ul.d li.today.ui-selecting,.ical ul.d li.today.ui-selected{background:#00b181;}
 .ical ul.d li.ui-selecting i,.ical ul.d li.ui-selected i,.ical ul.d li.ui-selecting b,.ical ul.d li.ui-selected b,.ical ul.d li.today.ui-selecting b,.ical ul.d li.today.ui-selecting i,.ical ul.d li.today.ui-selected b,.ical ul.d li.today.ui-selected i{color:#fff}
 
-/*.ical ul.d li.ideepgray{background:url(../pic/not-allow.png?t=201511042000) no-repeat center center;background-color:#CCCCCC;}*/
 
 /*.selecteddate .ical ul.d li i{padding: 6px 4px 5px 0px;}*/
 .selecteddate .ical ul.d li{position: relative; cursor: pointer;}

@@ -29,5 +29,21 @@
   	cursor: pointer;
 }
 .fj-piclist li:hover .fj-delicon { 
-	display:block; 
+    display:block; 
+}
+.confir-btn {
+    height: 30px;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+.list-input {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 15px; 
+}
+.list-input:last-child {
+  margin-bottom: 0;
+}
+.channel-box .label-input {
+  width: 100px;
 }

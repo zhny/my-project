@@ -2,6 +2,8 @@
 .cntbox-ota .divider {padding-bottom:10px; margin-bottom:10px; border-bottom:1px dashed #e4e4e4;}
 .cntbox-ota .inninfo li {padding:5px 0px; overflow:hidden; font-size:14px;}
 .cntbox-ota .inninfo li .lab {display:inline-block; width:80px; font-size:14px;}
+
+/*OTA room mapping*/
 .room-mapping {padding:10px 10px 20px 0;}
 .room-mapping .room-row {float:left; width:200px;}
 .room-mapping .room-linked {width:65%; margin-right:30px;}
@@ -21,7 +23,7 @@
 .room-row .room-block li .text {font-size:14px; white-space:nowrap;}
 .room-row .room-block .linked {display:block; color:#C00; margin-top:25px; text-align:center;}
 .room-linked .room-block {min-height:70px; padding:5px; background:#fff; border:1px dashed #ccc; border-radius:5px; overflow:hidden;}
-/*.room-linked .room-block-tip {background:#fff url(../pic/bg-room-mapping.png?t=201507011830) no-repeat center;}*/
+/*.room-linked .room-block-tip {background:#fff url(../pic/bg-room-mapping.png) no-repeat center;}*/
 .room-linked .room-block-error {border-color:#eb7070;}
 .room-linked .single-header {height:20px; padding-top:10px; margin-bottom:5px; position:relative;}
 .room-linked .single-header span {float:left; max-width:70%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size:14px;}
@@ -56,7 +58,7 @@
 /*OTA Box*/
 .otaBox li {float:left; width:184px; min-height:135px; margin-bottom:30px; padding:0 25px; border-bottom:1px dotted #ccc;}
 .otaBox li .logo {margin-bottom:10px;}
-/*.otaBox li .logo a {display:block; width:180px; height:75px; border:2px solid #d5d5d5; background:url(../pic/logo-ota.png?t=201507011830) no-repeat; font-size:0; line-height:0; overflow:hidden;}*/
+/*.otaBox li .logo a {display:block; width:180px; height:75px; border:2px solid #d5d5d5; background:url(../pic/logo-ota.png) no-repeat; font-size:0; line-height:0; overflow:hidden;}*/
 .otaBox li .logo a:hover {opacity:.7;}
 .otaBox li .logo .ota-elong  {background-position:0 0;}
 .otaBox li .logo .ota-ctrip  {background-position:0 -75px;}
@@ -75,7 +77,7 @@
 .otaBox li .logo .ota-nuomi  {background-position:0 -1050px;}
 .otaBox li .logo .ota-tujia  {background-position:0 -1125px;}
 .otaBox li .link .btn {width:122px;}
-/*.otaBox li .link .ico-question {display:inline-block; width:16px; height:16px; margin-left:10px; background:url(../pic/icon-symbol.png?t=201507011830) no-repeat; vertical-align:-3px; *vertical-align:middle; cursor:pointer;}*/
+/*.otaBox li .link .ico-question {display:inline-block; width:16px; height:16px; margin-left:10px; background:url(../pic/icon-symbol.png) no-repeat; vertical-align:-3px; *vertical-align:middle; cursor:pointer;}*/
 .otaBox li .link .ico-question:hover {opacity:.7;}
 .otaBox li .link .btn-waiting, .otaBox li .link .btn-waiting:hover {cursor:default; background-color:#e6e6e6; background-repeat:repeat-x; border:1px solid #ccc; *border:0; border-color:#e6e6e6 #e6e6e6 #bfbfbf; border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25); border-bottom-color:#b3b3b3; filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffff',endColorstr='#ffe6e6e6',GradientType=0); filter:progid:DXImageTransform.Microsoft.gradient(enabled=false); *zoom:1; -webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05); -moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05); box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05)}
 .otaBox li .note {width:170px; height:40px; margin-bottom:10px; resize:vertical;}
@@ -83,7 +85,7 @@
 /*OTA List*/
 .otaList li {float:left; width:215px; height:129px; margin:10px; box-shadow:0 0 2px rgba(0,0,0,.3);}
 .otaList li .logo a {display:block; padding:10px 0;}
-/*.otaList li .logo a i {display:block; width:180px; height:75px; margin:0 auto; background:url(../pic/logo-ota.png?t=201507011830) no-repeat;}*/
+/*.otaList li .logo a i {display:block; width:180px; height:75px; margin:0 auto; background:url(../pic/logo-ota.png) no-repeat;}*/
 .otaList li .logo a:hover {opacity:.7;}
 .otaList li .logo .ota-elong  {background-position:0 0;}
 .otaList li .logo .ota-ctrip  {background-position:0 -75px;}
@@ -103,13 +105,13 @@
 .otaList li .logo .ota-tujia  {background-position:0 -1125px;}
 .otaList li .link {position:relative; height:34px;}
 .otaList li .link .btn {position:absolute; left:0; right:0; bottom:0; z-index:1; border-width:1px 0 0 0;}
-/*.otaList li .link .ico-question {display:inline-block; width:16px; height:16px; background:url(../pic/icon-symbol.png?t=201507011830) no-repeat; cursor:pointer; position:absolute; right:5px; top:-20px; z-index:2;}*/
+/*.otaList li .link .ico-question {display:inline-block; width:16px; height:16px; background:url(../pic/icon-symbol.png) no-repeat; cursor:pointer; position:absolute; right:5px; top:-20px; z-index:2;}*/
 .otaList li .link .ico-question:hover {opacity:.7;}
 .otaList li .link .btn-waiting, .otaList li .link .btn-waiting:hover {cursor:default; background-color:#e6e6e6; border:1px solid #ccc; border-color:#e6e6e6 #e6e6e6 #bfbfbf; border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25); border-bottom-color:#b3b3b3; box-shadow:none;}
 .otaList li .note {width:170px; height:40px; margin-bottom:10px; resize:vertical;}
 
 /*doorlock mapping*/
-/*.lock-mapping .room-block-tip {background-image:url(../pic/bg-lock-mapping.png?t=201507011830);}*/
+/*.lock-mapping .room-block-tip {background-image:url(../pic/bg-lock-mapping.png);}*/
 .lock-mapping .room-content .single {width:30%;}
 .lock-mapping .room-linked {width:70%;}
 .lock-mapping .room-linked .room-block {min-height:0; height:40px;}

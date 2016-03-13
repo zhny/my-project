@@ -12,7 +12,6 @@
     "vue": "^1.0.16"
   },
   "devDependencies": {
-    "jquery":"1.9.1",
     "vue-router":"^0.7.11",
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
@@ -28,6 +27,7 @@
     "eslint-loader": "^1.2.0",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.13.3",
+    "http-proxy":"^1.13.2",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.4",
     "function-bind": "^1.0.2",
@@ -48,6 +48,7 @@
     "vue-loader": "^8.0.0",
     "vue-router": "^0.7.11",
     "vue-style-loader": "^1.0.0",
+    "es6-promise":"^3.1.2",
     "webpack": "^1.12.2",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0"
