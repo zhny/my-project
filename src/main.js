@@ -9,7 +9,7 @@ import VueRouter from 'vue-router'
 import { configRouter } from './route-config'
 
 
-Vue.config.debug = true
+Vue.config.debug = false
 Vue.use(VueRouter)
 
 // create router
