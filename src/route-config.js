@@ -20,6 +20,9 @@ export function configRouter (router) {
       subRoutes: {
         'infos': {
           component: require('./components/customer/infos.vue')
+        },
+        'sms': {
+          component: require('./components/customer/sms.vue')
         }
       }
     }

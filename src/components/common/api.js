@@ -4,24 +4,31 @@ function wrapData(d){
 	result.data=d;
 	return result;
 }
+function handleResp(r){
+	if(r.code==0){
+		return r.data;
+	}else{					//其他错误码处理
+		alert(r.msg);
+		return null;
+	}
+}
 
 export default{
 
 	addroom(d,cb){						//增加或修改房间
 		setTimeout(function(){
-			// cb(require('./data/'))
 			cb({'roomId':1});
 		},500);
-		// $.post('/vhotel/addroom',wrapData(d),function(r){ 
-  //       	cb(r);
+		// $.post('/vhotel/addroom',wrapData(d),function(r){ 			//POST
+  //       	cb(handleResp(r);
   //       }); 
 	},
 	getHotels(d,cb){					//获取客栈
 		setTimeout(function(){
 			cb(require('./data/hotels'))
 		},500);
-		// $.get('/vhotel/hotel/getHotels',wrapData(d),function(r){ 
-  //       	cb(r);
+		// $.get('/vhotel/hotel/getHotels',wrapData(d),function(r){     //GET请求
+  //       	cb(handleResp(r);
   //       }); 
 		
 	},
@@ -40,14 +47,29 @@ export default{
 			cb(require('./data/roomstatus'))
 		},500);
 	},
-	delroom(d,cb){					//获取房态,订单
+	delroom(d,cb){					//删除房间
 		setTimeout(function(){
 			cb();
 		},500);
 	},
-	customers(d,cb){					//获取房态,订单
+	customers(d,cb){					//获取入住客户信息
 		setTimeout(function(){
 			cb(require('./data/customers'))
 		},500);
 	},
+	autosmsconfs(d,cb){					//获取自动短信配置
+		setTimeout(function(){
+			cb(require('./data/autosmsconfs'))
+		},500);
+	},
+	autosmsconfs_post(d,cb){					//设置自动短信配置
+		setTimeout(function(){
+			cb();
+		},500);
+	},
+	smshistory(d,cb){					//获取自动短信配置
+		setTimeout(function(){
+			cb(require('./data/smshistory'))
+		},500);
+	}
 }
