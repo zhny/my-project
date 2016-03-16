@@ -1,6 +1,7 @@
 module.exports={
-	total:1,
-	rows:[
+	total:1,				//总页数
+	counts:1,				//总数
+	rows:[					//记录
 	  {
 	  	roomId:1,
 	  	roomName:'水龙吟',

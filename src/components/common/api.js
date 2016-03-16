@@ -67,9 +67,15 @@ export default{
 			cb();
 		},500);
 	},
-	smshistory(d,cb){					//获取自动短信配置
+	smshistory(d,cb){					//获取短信发送历史
 		setTimeout(function(){
 			cb(require('./data/smshistory'))
 		},500);
-	}
+	},
+	orders(d,cb){					//获取订单信息
+		setTimeout(function(){
+			cb(require('./data/orders'))
+		},500);
+	},
+	
 }

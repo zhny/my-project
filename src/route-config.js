@@ -7,6 +7,9 @@ export function configRouter (router) {
         'roomstatus': {
           component: require('./components/hotel/roomstatus.vue')
         },
+        'orders': {
+          component: require('./components/hotel/orders.vue')
+        },
         'roomlist': {
           component: require('./components/hotel/roomlist.vue')
         },

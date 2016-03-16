@@ -38,6 +38,7 @@ export default {
     return {
       rows: [],
       total:0,
+      counts:0,
       cur:1,
       temps:{}
     }
@@ -68,6 +69,7 @@ export default {
       api[$this.url]($this.params,function(r){
         $this.total=r.total;
         $this.rows=r.rows;
+        $this.counts=r.counts;
       });
     },
     compiletbody:function(){
