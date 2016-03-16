@@ -30,14 +30,55 @@
               <option value="2">已删除</option>
             </select>
 
-            <input type="button" style="padding:4px 20px;" value="查询"class="btn btn-primary" @click="seach">
+            <input type="button" style="padding:4px 20px;" value="查询"class="btn btn-primary" @click="search">
             
           </div>
         </div>
       </form>
       <!-- 全部订单 -->
       <div class="mb20">
-        <page :params="params" :columns="columns" url="orders"><page>
+        <div class="mb10 clx"> <span>共找到 <strong class="bold t16 red">{{result.counts}}</strong> 个订单</div>
+        <table style="width:100%;" class="table table-bordered table-analytics">
+          <tbody>
+            <tr>
+              <th width="80">客人姓名</th>
+              <th width="120">手机号</th>
+              <th width="90">订单来源</th>
+              <th width="110">录入时间</th>
+              <th width="130">入住/退房日期</th>
+              <th>房间号</th>
+              <th width="90">订单金额</th>
+              <th width="100">操作员</th>
+              <th width="80">订单状态</th>
+              <th width="100" class="tc">操作</th>
+            </tr>
+            <template v-for="row in result.rows">
+              <tr>
+                <td rowspan="{{row.orderItems.length}}">梁小姐</td>
+                <td rowspan="{{row.orderItems.length}}">13907713819</td>
+                <td rowspan="{{row.orderItems.length}}">熟客及推荐</td>
+                <td>02/19 12:48</td>
+                <td>02/19 - 02/20</td>
+                <td>秋波媚</td>
+                <td>¥320</td>
+                <td>掌柜</td>
+                <td>已退房</td>
+                <td class="tc"><a href="#">查看订单</a></td>
+              </tr>
+              <tr v-for="item in row.orderItems | limitBy row.orderItems.length-1 1">
+                <td>02/19 12:48</td>
+                <td>02/19 - 02/20</td>
+                <td>调笑令</td>
+                <td>¥320</td>
+                <td>掌柜</td>
+                <td>已退房</td>
+                <td class="tc"><a href="javascript:;" @click="viewOrder(row)">查看订单</a></td>
+              </tr>
+            </template>
+            
+          </tbody>
+        </table>
+        <pagebar :result.sync="result" :params="params" url="orders"></pagebar>
       </div>
     </div>
   </div>
@@ -46,11 +87,11 @@
 <script>
 import datepick from '../common/datepick'
 import api from '../common/api'
-import page from '../common/page'
+import pagebar from '../common/pagebar'
 
 export default {
   components:{
-    datepick,page
+    datepick,pagebar
   },
   data () {
     return {
@@ -61,23 +102,8 @@ export default {
       hotels:[],
       curHotel:'',
       curRoom:'',
-      params:'',
-      columns: [
-        {title: '客人姓名',width: '80',name: 'guestName'},
-        {title: '手机号',width: '120',name: 'phone'},
-        {title: '订单来源',width: '90',name: 'channelName'},
-        {title: '录入时间',width: '110',name: 'created'},
-        {title: '入住/退房日期',width: '80',name: 'imgs'},
-        {title: '房间号',width: '',name: 'facilities'},
-        {title: '订单金额',width: '',name: 'facilities'},
-        {title: '操作员',width: '',name: 'facilities'},
-        {title: '管理',width: '150',name: 'ope',template:function(row){
-          var html='<a class="mr10" @click="$parent.edit(\''+row.roomId+'\')" href="javascript:;">编辑</a>';
-          html+='<a class="del-rm mr10" @click="$parent.del(\''+row.roomId+'\')" href="javascript:;">删除</a>';
-          return html;
-        }}
-      ]
-
+      params:{},
+      result:{}
     }
   },
   ready () {
@@ -100,6 +126,18 @@ export default {
         }
       }
       return rooms;
+    }
+  },
+  methods:{
+    search(){
+      this.params={
+        hotelId:this.curHotel,
+        roomId:this.curRoom,
+        dateType:this.dateType,
+        startDate:this.startDate,
+        endDate:this.endDate,
+        orderStatus:this.orderStatus
+      }
     }
   }
 }

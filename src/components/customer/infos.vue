@@ -62,8 +62,10 @@ export default {
   },
   methods:{
     search:function(){
-      this.params.hotelId=this.hotelId;
-      this.params.keyword=this.keyword;
+      this.params={
+        hotelId:this.hotelId,
+        keyword:this.keyword
+      }
     }
   }
 }

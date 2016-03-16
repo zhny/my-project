@@ -76,7 +76,7 @@ export default {
       this.$compile(this.$els.tbody);
     }
   },
-  compiled:function(){
+  ready (){
     this.loadData();
     this.compiletbody();
   },

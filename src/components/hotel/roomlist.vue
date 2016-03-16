@@ -74,8 +74,10 @@ export default {
       }
     },
     search (){
-      this.params.hotelId=this.curHotel;
-      this.params.typeId=this.curType;
+      this.params={
+        hotelId:this.curHotel,
+        typeId:this.curType
+      }
     },
   },
   computed :{
