@@ -25,6 +25,28 @@ export function configRouter (router) {
           component: require('./components/customer/sms.vue')
         }
       }
-    }
+    },
+    '/setting': {
+      component: require('./components/setting/index.vue'),
+      subRoutes: {
+        'userlist': {
+          component: require('./components/setting/userlist.vue')
+        },
+        'distribute': {
+          component: require('./components/setting/distribute.vue')
+        }
+      }
+    },
+    '/distri': {
+      component: require('./components/distri/index.vue'),
+      subRoutes: {
+        'distlist': {
+          component: require('./components/distri/distlist.vue')
+        },
+        'channel': {
+          component: require('./components/distri/channel.vue')
+        }
+      }
+    },
   })
 }
