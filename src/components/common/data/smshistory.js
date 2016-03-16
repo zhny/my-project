@@ -1,5 +1,4 @@
 module.exports={
-  total:1,
   rows:[
     {
       "guestName":"梁小姐",

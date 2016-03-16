@@ -4,13 +4,13 @@
       <tr>
         <th v-for="column in columns" width="{{ column.width }}">{{ column.title }}</th>
       </tr>
-      <tr v-for="row in rows">
+      <tr v-for="row in curRows">
         <td v-for="column in columns" v-html="row | renderpage column"></td>
       </tr>
     </tbody>
   </table>
-  <div class="paging tc">
-    <ul style="">
+  <div class="paging tc" v-show="counts>0">
+    <ul style="counts>0">
       <li>
         <a href="javascript:void(0);" @click="prev">«</a>
       </li>
@@ -32,15 +32,38 @@ export default {
   props: {
     columns: Array,
     params: Object,
-    url: String
-  },
-  data () {
-    return {
-      rows: [],
-      total:0,
-      counts:0,
-      cur:1,
-      temps:{}
+    url: String,
+    firstLoad:{
+      type:String,
+      default:"false"
+    },
+    curRows:{
+      type:Array,
+      default:function(){
+        return [];
+      }
+    },
+    rows:{
+      type:Array,
+      default:function(){
+        return [];
+      }
+    },
+    pageSize:{
+      type:Number,
+      default:10,
+    },
+    total:{
+      type:Number,
+      default:0
+    },
+    cur:{
+      type:Number,
+      default:1
+    },
+    counts:{
+      type:Number,
+      default:0
     }
   },
   filters:{
@@ -54,6 +77,8 @@ export default {
     },
     next:function(){
       if(this.cur<this.total){
+        console.log(this.cur);
+        console.log(this.total);
         this.cur++;
       }
     },
@@ -63,22 +88,29 @@ export default {
     iscur:function(i){
       return this.cur===i;
     },
-    loadData:function(){
+    renderData () {         //渲染到页面的数据
+      var _start=(this.cur-1)*this.pageSize;
+      var _end=this.cur*this.pageSize>this.counts?this.counts:(this.cur*this.pageSize);
+      this.curRows=this.rows.slice(_start, _end);
+    },
+    loadData (){      //后台加载数据
       var $this=this;
       this.params.cur=this.cur;
       api[$this.url]($this.params,function(r){
-        $this.total=r.total;
         $this.rows=r.rows;
-        $this.counts=r.counts;
+        $this.counts=r.rows.length;
+        $this.total=Math.floor($this.counts/$this.pageSize)+($this.counts%$this.pageSize>0?1:0);
+        $this.renderData();
       });
     },
-    compiletbody:function(){
+    compiletbody (){
       this.$compile(this.$els.tbody);
     }
   },
-  ready (){
-    this.loadData();
-    this.compiletbody();
+  ready () {
+    if(this.firstLoad=="true"){
+      this.loadData();
+    }
   },
   computed: {
     showPageNum: function () {
@@ -101,12 +133,12 @@ export default {
   },
   watch:{
     cur:function(){
-      this.loadData();
+      this.renderData();
     },
     params:function(){
       this.loadData();
     },
-    rows:function(){
+    curRows:function(){
       this.compiletbody();
     }
   }

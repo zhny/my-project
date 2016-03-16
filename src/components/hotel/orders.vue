@@ -37,7 +37,7 @@
       </form>
       <!-- 全部订单 -->
       <div class="mb20">
-        <div class="mb10 clx"> <span>共找到 <strong class="bold t16 red">{{result.counts}}</strong> 个订单</div>
+        <div class="mb10 clx"> <span>共找到 <strong class="bold t16 red">{{counts}}</strong> 个订单</div>
         <table style="width:100%;" class="table table-bordered table-analytics">
           <tbody>
             <tr>
@@ -52,11 +52,11 @@
               <th width="80">订单状态</th>
               <th width="100" class="tc">操作</th>
             </tr>
-            <template v-for="row in result.rows">
+            <template v-for="row in curRows">
               <tr>
-                <td rowspan="{{row.orderItems.length}}">梁小姐</td>
-                <td rowspan="{{row.orderItems.length}}">13907713819</td>
-                <td rowspan="{{row.orderItems.length}}">熟客及推荐</td>
+                <td rowspan="{{row.orderItems.length}}">{{row.guestName}}</td>
+                <td rowspan="{{row.orderItems.length}}">{{row.phone}}</td>
+                <td rowspan="{{row.orderItems.length}}">{{row.channelName}}</td>
                 <td>02/19 12:48</td>
                 <td>02/19 - 02/20</td>
                 <td>秋波媚</td>
@@ -78,7 +78,7 @@
             
           </tbody>
         </table>
-        <pagebar :result.sync="result" :params="params" url="orders"></pagebar>
+        <pagebar :cur-rows.sync="curRows" :params="params" url="orders" :counts.sync="counts"></pagebar>
       </div>
     </div>
   </div>
@@ -103,7 +103,8 @@ export default {
       curHotel:'',
       curRoom:'',
       params:{},
-      result:{}
+      curRows:[],
+      counts:0
     }
   },
   ready () {

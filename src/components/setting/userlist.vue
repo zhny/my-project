@@ -16,7 +16,7 @@
             </ul>
           </div>
         </div>
-        <page :columns="columns" url="users" :params="params"></page>
+        <page :columns="columns" url="users" :params="params" first-load="true"></page>
       </div>
   </div>
   <modal :show.sync="showmodel">

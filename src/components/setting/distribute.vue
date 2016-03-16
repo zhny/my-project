@@ -64,5 +64,5 @@
 </template>
 
 <script>
-import api from '../common/api'
+// import api from '../common/api'
 </script>

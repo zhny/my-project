@@ -179,9 +179,11 @@ export default{
 			});
 		},
 		search(){
-			this.params.hotelId=this.hotelId;
-			this.params.startDate=this.startDate;
-			this.params.endDate=this.endDate;
+			this.params={
+				hotelId:this.hotelId,
+				startDate:this.startDate,
+				endDate:this.endDate
+			}
 		}
 	},
 	ready () {

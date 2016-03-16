@@ -72,9 +72,6 @@ export default{
 			cb(require('./data/smshistory'))
 		},500);
 	},
-<<<<<<< HEAD
-	orders(d,cb){					//获取订单信息
-=======
 	users(d,cb){					//获取用户列表
 		setTimeout(function(){
 			cb(require('./data/users'))
@@ -111,10 +108,9 @@ export default{
   		//       });
   	},
   	orders(d,cb){					//获取分销订单列表
->>>>>>> 2eea5bb398b6b396608c54e7ce28f944d3318441
 		setTimeout(function(){
 			cb(require('./data/orders'))
 		},500);
-	},
+	}
 	
 }

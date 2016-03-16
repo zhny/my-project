@@ -80,7 +80,7 @@ export default {
     submit(){
         var $this=this;
         api.addroom($this.detail,function(r){                                  
-            console.log(r);
+            $this.$router.go({path:'/hotel/roomlist'});
         });
     }
   },

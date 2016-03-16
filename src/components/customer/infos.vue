@@ -19,9 +19,8 @@
             <input type="button" value="查询" class="fl btn btn-primary dealbtn" style="width:50px;" @click="search">
           </div>
         </form>
-
         <div class="chart-type">
-          共有2个客人
+          <!-- 共有2个客人 -->
         </div>
       </div>
       <div><page :columns="columns" url="customers" :params="params"></page></div>
