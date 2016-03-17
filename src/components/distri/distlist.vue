@@ -27,7 +27,7 @@
       <div>
         <div class="table-header clx">
           <a id="exportwaterdetail" href="javascript:;" target="_blank" class="fr btn btn-primary btn-small">导出excel表格</a>
-          <a href="javascript:;" class="fr btn btn-primary btn-small mr10" >批量返点</a>
+          <a href="javascript:;" class="fr btn btn-primary btn-small mr10" @click="rebate">批量返点</a>
           <h1>分销订单列表<span class="ml5 light">（2016-02-01 00:00 至 2016-02-22 23:59）</span></h1>
         </div>
         <table id="guestlist" class="table table-striped table-bordered table-analytics">
@@ -47,26 +47,33 @@
               <th width="60">操作人</th>
             </tr>
           </tbody>
-          <template v-for="row in rows">
-              <tr>
-                <td>{{row.orderId}}</td>
-                <td>{{row.orderCreateDate}}</td>
-                <td>{{row.hotelId}}</td>  
-                <td>{{row.orderDesc}}</td>
-                <td>{{row.orderStatus}}</td>
-                <td>{{row.orderAmount}}</td>
-                <td>{{row.channelName}}</td>
-                <td>{{row.rebate}}</td>
-                <td>{{row.rebateAmount}}</td>
-                <td>{{row.rebateStatus}}</td>
-                <td>{{row.rebateDate}}</td>
-                <td>{{row.userName}}</td>
-              </tr>
-            </template>
+          <template v-for="row in distorders">
+            <tr>
+              <td>{{row.orderId}}</td>
+              <td>{{row.orderCreateDate}}</td>
+              <td>{{row.hotelId}}</td>  
+              <td>{{row.orderDesc}}</td>
+              <td>{{row.orderStatus==0?'未完成':'已完成'}}</td>
+              <td>{{row.orderAmount}}</td>
+              <td>{{row.channelName}}</td>
+              <td>{{row.rebate}}</td>
+              <td>{{row.rebateAmount}}</td>
+              <td>{{row.rebateStatus==0?'未返点':'已返点'}}</td>
+              <td>{{row.rebateDate}}</td>
+              <td>{{row.userName}}</td>
+            </tr>
+          </template>
         </table>
         <div style="text-align:right; padding:10px;"><span class="mr20">未返点金额：{{orderStatistic.totalUnRebateAmount}}</span><span>已返点金额：{{orderStatistic.totalHadRebateAmount}}</span></div>
       </div>
   </div>
+  <modal :show.sync="showmodel">
+    <template slot="title">批量返点</template>
+    <div slot="body" class="cntbox tab-content cntbox-ota" style="position:static;">
+      <p>你将为{{rebateNum}}个订单执行返点操作，确定返点？</p>
+      <p style="text-align:center;"><button type="submit" class="confir-btn mr10" @click="rebateReq">确认</button><button type="cancel" class="confir-btn" @click="this.showmodel=false;">返回</button></p>               
+    </div>
+  </modal>
 </template>
 
 <script>
@@ -82,43 +89,10 @@ export default {
       channelCode:'',
       orderStatistic:{},
       params:{},
-      curRows:[],
-      counts:0
-      // columns: [
-      //   {title: '订单号',width: '100',name: 'orderId'},
-      //   {title: '订单时间',width: '100',name: 'orderCreateDate'},
-      //   {title: '订单客栈',width: '120',name: 'hotelName'},
-      //   {title: '订单详情',width: '',name: 'orderDesc'},
-      //   // {title: '订单房型',width: '100',name: ' '},
-      //   // {title: '入住时间',width: '120',name: ' '},
-      //   // {title: '退房时间',width: '120',name: ' '},
-      //   // {title: '入住天数',width: '60',name: ' '},
-      //   // {title: '房间状态',width: '60',name: ' '},
-      //   {title: '订单状态',width: '60',name: 'orderStatus',template:function(row){
-      //     var html;
-      //     if(row.orderStatus==0) {
-      //       html = '未完成';
-      //     } else if(row.orderStatus==1) {
-      //       html = '已完成';
-      //     }
-      //     return html;
-      //   }},
-      //   {title: '订单金额',width: '60',name: 'orderAmount'},
-      //   {title: '所属分销',width: '60',name: 'channelName'},
-      //   {title: '返点比例',width: '60',name: 'rebate'},
-      //   {title: '返点金额',width: '60',name: 'rebateAmount'},
-      //   {title: '返点操作',width: '60',name: 'rebateStatus',template:function(row){
-      //     var html;
-      //     if(row.rebateStatus==0) {
-      //       html = '未返点';
-      //     } else if(row.rebateStatus==1) {
-      //       html = '已返点';
-      //     }
-      //     return html;
-      //   }},
-      //   {title: '返点时间',width: '100',name: 'rebateDate'},
-      //   {title: '操作人',width: '60',name: 'userName'}
-      // ]
+      distorders:[],
+      orderIds:'',
+      rebateNum:0,
+      showmodel:false,
     }
   },
   components: {
@@ -129,13 +103,30 @@ export default {
     api.getChannels({},function(r){
       $this.channels=r;
     });
-    api.get
+    api.getDistorders({},function(r){
+      $this.distorders=r;
+    });
+    api.getOrderStatistic([],function(r){
+      $this.orderStatistic=r;
+    });
   },
   methods:{
     search:function(){
-      this.params.channelCode=this.channelCode;
-      this.params.orderId=this.orderId;
-      this.params.rebateStatus=this.rebateStatus;
+      this.params={channelCode:this.channelCode,orderId:this.orderId,rebateStatus:this.rebateStatus}
+    },
+    rebate:function(){
+      var len = this.distorders.length;
+      for(var i=0; i<len; i++) {
+        if(this.distorders[i].rebateStatus==0){
+          this.orderIds += this.distorders[i].orderId +';';
+          this.rebateNum++;
+        }
+      }
+      this.showmodel=true;
+    },
+    rebateReq:function(){
+      //发送一个GET请求,传回orderIds,更新distorders
+      this.showmodel=false;
     }
   }
 }

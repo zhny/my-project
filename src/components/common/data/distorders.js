@@ -1,5 +1,4 @@
-module.exports={
-  	rows:[                                  
+module.exports=[                                  
 	  	{
 	  		"orderId":2,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
@@ -17,7 +16,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  		
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":3,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -33,7 +32,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  	
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":4,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -49,7 +48,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  		
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":5,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -65,7 +64,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  	
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":6,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -81,7 +80,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  		
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":7,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -97,7 +96,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  	
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":8,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -113,7 +112,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  		
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":9,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -129,7 +128,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  	
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":10,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -145,7 +144,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  		
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":11,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -161,7 +160,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  	
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":12,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -177,7 +176,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  		
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":13,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -193,7 +192,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  	
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":14,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -209,7 +208,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  		
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":15,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -225,7 +224,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  	
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":16,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -241,7 +240,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  		
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":17,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -257,7 +256,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  	
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":18,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -273,7 +272,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  		
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":19,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -289,7 +288,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  	
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":20,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -299,13 +298,13 @@ module.exports={
 			"channelName":"张三",				//分销渠道名称
 			"rebate":0.05,						//返点比例5%
 			"rebateAmount":223,					//返点金额
-			"orderStatus": "1",                  //0 未完成 1已完成
+			"orderStatus": "0",                  //0 未完成 1已完成
 			"rebateStatus":"0",					//返点状态:   0 未返点，1 已返点
 			"rebateDate":"2016-02-20",			//饭店时间
 			"userName":"李东汉"					//操作人名称	  		
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":21,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -316,12 +315,12 @@ module.exports={
 			"rebate":0.05,						//返点比例5%
 			"rebateAmount":223,					//返点金额
 			"orderStatus": "1",                  //0 未完成 1已完成
-			"rebateStatus":"0",					//返点状态:   0 未返点，1 已返点
+			"rebateStatus":"1",					//返点状态:   0 未返点，1 已返点
 			"rebateDate":"2016-02-20",			//饭店时间
 			"userName":"李东汉"					//操作人名称	  	
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":22,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -337,7 +336,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  		
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":23,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -348,12 +347,12 @@ module.exports={
 			"rebate":0.05,						//返点比例5%
 			"rebateAmount":223,					//返点金额
 			"orderStatus": "1",                  //0 未完成 1已完成
-			"rebateStatus":"0",					//返点状态:   0 未返点，1 已返点
+			"rebateStatus":"1",					//返点状态:   0 未返点，1 已返点
 			"rebateDate":"2016-02-20",			//饭店时间
 			"userName":"李东汉"					//操作人名称	  	
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":24,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -369,7 +368,7 @@ module.exports={
 			"userName":"李东汉"					//操作人名称	  		
 	  	},
 	  	{
-	  		"orderId":2,						//订单ID
+	  		"orderId":25,						//订单ID
 			"orderCreateDate":"2016-02-20",		//订单创建时间
 			"orderAmount":5000,					//订单金额	
 			"hotelId":3,						//客栈ID
@@ -379,11 +378,10 @@ module.exports={
 			"channelName":"张三",				//分销渠道名称
 			"rebate":0.05,						//返点比例5%
 			"rebateAmount":223,					//返点金额
-			"orderStatus": "1",                  //0 未完成 1已完成
+			"orderStatus": "0",                  //0 未完成 1已完成
 			"rebateStatus":"0",					//返点状态:   0 未返点，1 已返点
 			"rebateDate":"2016-02-20",			//饭店时间
 			"userName":"李东汉"					//操作人名称	  	
 	  	},
   	]
- }
 
