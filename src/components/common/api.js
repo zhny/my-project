@@ -107,9 +107,14 @@ export default{
   		//       	cb(handleResp(r);
   		//       });
   	},
-  	orders(d,cb){					//获取分销订单列表
+  	orders(d,cb){					//获取订单列表
 		setTimeout(function(){
 			cb(require('./data/orders'))
+		},500);
+	},
+	distorders(d,cb){					//获取分销订单列表
+		setTimeout(function(){
+			cb(require('./data/distorders'))
 		},500);
 	}
 	
