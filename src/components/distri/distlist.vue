@@ -87,6 +87,7 @@ export default {
       channels:[],
       orderId:'',
       channelCode:'',
+      rebateStatus:'',
       orderStatistic:{},
       params:{},
       distorders:[],
@@ -115,6 +116,8 @@ export default {
       this.params={channelCode:this.channelCode,orderId:this.orderId,rebateStatus:this.rebateStatus}
     },
     rebate:function(){
+      this.rebateNum = 0;
+      this.orderIds = '';
       var len = this.distorders.length;
       for(var i=0; i<len; i++) {
         if(this.distorders[i].rebateStatus==0){
