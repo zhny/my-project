@@ -24,6 +24,8 @@ const router = new VueRouter({
 configRouter(router)
 
 router.start(AdminApp, '#app')
-
+router.redirect({
+  '/': '/hotel/roomstatus'
+});
 // just for debugging
 window.router = router
