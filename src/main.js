@@ -22,10 +22,10 @@ const router = new VueRouter({
 })
 
 configRouter(router)
+router.start(App, '#app')
 router.redirect({
   '/': '/hotel/roomstatus'
-})
-router.start(App, '#app')
+});
 
 // just for debugging
 window.router = router

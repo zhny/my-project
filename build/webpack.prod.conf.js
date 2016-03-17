@@ -51,7 +51,8 @@ config.plugins = (config.plugins || []).concat([
   new HtmlWebpackPlugin({
     filename: '../index.html',
     template: 'src/index.html',
-    inject: true,
+    inject: 'body',
+    chunks: ['app'],
     minify: {
       removeComments: true,
       collapseWhitespace: true,
@@ -59,7 +60,30 @@ config.plugins = (config.plugins || []).concat([
       // more options:
       // https://github.com/kangax/html-minifier#options-quick-reference
     }
-  })
+  }),
+  new HtmlWebpackPlugin({
+    filename: '../channel.html',
+    template: 'src/channel.html',
+    inject: 'body',
+    chunks: ['channel'],
+    minify: {
+      removeComments: true,
+      collapseWhitespace: true,
+      removeAttributeQuotes: true
+    }
+  }),
+  new HtmlWebpackPlugin({
+    filename: '../admin.html',
+    template: 'src/admin.html',
+    inject: true,
+    inject: 'body',
+    chunks: ['admin'],
+    minify: {
+      removeComments: true,
+      collapseWhitespace: true,
+      removeAttributeQuotes: true
+    }
+  }),
 ])
 
 module.exports = config

@@ -116,6 +116,11 @@ export default{
 		setTimeout(function(){
 			cb(require('./data/distorders'))
 		},500);
-	}
+	},
 	
+	logs(d,cb){					//获取操作日志
+		setTimeout(function(){
+			cb(require('./data/logs'))
+		},500);
+	},
 }

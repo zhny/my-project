@@ -136,7 +136,7 @@
     export default {
         props: {
             width: { type: String, default: '100px' },
-            readonly: { type: Boolean, default: true },
+            readonly: { type: Boolean, default: false },
             value: { type: String, default: '' },
             format: { type: String, default: 'YYYY-MM-DD' }
         },

@@ -51,5 +51,8 @@ export function configRouter (router) {
         }
       }
     },
+    'log':{
+      component: require('./components/log/log.vue'),
+    }
   })
 }

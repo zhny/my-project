@@ -26,7 +26,21 @@ config.plugins = (config.plugins || []).concat([
   new HtmlWebpackPlugin({
     filename: 'index.html',
     template: 'src/index.html',
-    inject: true
+    inject: 'body',
+    chunks: ['app']
+  }),
+  new HtmlWebpackPlugin({
+    filename: 'channel.html',
+    template: 'src/channel.html',
+    inject: 'body',
+    chunks: ['channel']
+    //inject: true
+  }),
+  new HtmlWebpackPlugin({
+    filename: 'admin.html',
+    template: 'src/admin.html',
+    chunks: ['admin']
+    //inject: true
   })
 ])
 

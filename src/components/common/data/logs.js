@@ -1,0 +1,21 @@
+module.exports={
+	total:1,
+	rows:[
+	  {
+	  	id:1,
+	  	createon:'2016-03-01',
+	  	createby:'张三<br>15208376050',
+	  	logType:'修改订单',
+	  	guestInfo:'客户信息哈哈哈',
+	  	logDetail:'日志详细嘻嘻嘻想想想想想想想想想想想'
+	  },
+	  {
+	  	id:2,
+	  	createon:'2016-03-01',
+	  	createby:'张三<br>15208376050',
+	  	logType:'修改订单',
+	  	guestInfo:'客户信息哈哈哈',
+	  	logDetail:'日志详细嘻嘻嘻想想想想想想想想想想想'
+	  },
+	]
+}

@@ -12,7 +12,7 @@
       <a :class="{'active':isurl('/customer')}" v-link="{ path: '/customer/infos' }">客户</a>
       <a href="../marketing/weibo.html">营销</a>
       <a :class="{'active':isurl('/setting')}" v-link="{ path: '/setting/userlist' }">设置</a>
-      <a :class="{'active':isurl('/logs')}" v-link="{ path: '/logs/logs' }">日志</a>
+      <a :class="{'active':isurl('/log')}" v-link="{ path: '/log' }">日志</a>
       <a :class="{'active':isurl('/distri')}" v-link="{ path: '/distri/distlist' }">分销管理</a>
     </div>
   </div>
