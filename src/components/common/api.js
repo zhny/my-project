@@ -112,12 +112,16 @@ export default{
 			cb(require('./data/orders'))
 		},500);
 	},
-	distorders(d,cb){					//获取分销订单列表
+	getDistorders(d,cb){					//获取分销订单列表
 		setTimeout(function(){
 			cb(require('./data/distorders'))
 		},500);
 	},
-	
+	getOrderStatistic(d,cb){					//获取返点总金额
+		setTimeout(function(){
+			cb(require('./data/orderStatistic'))
+		},100);
+	},
 	logs(d,cb){					//获取操作日志
 		setTimeout(function(){
 			cb(require('./data/logs'))
