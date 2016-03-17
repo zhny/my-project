@@ -180,7 +180,11 @@ export default {
     },
 
     renderRooms (){
-      var $this=this;                               
+      var $this=this;
+
+      this.curCell="";
+      this.selectedCellStack=[];
+      console.log(0)
       if(this.curHotel.hotelId){                          //渲染空表格
         var types=this.curHotel.types;
         var emptyRoomStatus={};
@@ -203,7 +207,6 @@ export default {
             }
           }
         }
-
         api.roomstatus({
             hotelId:$this.curHotel.hotelId,
             fromDate:dateutil.format($this.startDate,'yyyy-MM-dd'),
@@ -229,9 +232,6 @@ export default {
       this.renderRooms();
     },
     startDate () {
-      this.renderRooms();
-    },
-    endDate () {
       this.renderRooms();
     }
   }

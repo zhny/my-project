@@ -9,7 +9,7 @@
         <form action="">
           <div style="" class="date-box clx" id="reportid">
             <select class="fl mr10" v-model="hotelId">
-              <option></option>
+              <option value="" selected="selectd">所有客栈</option>
               <option v-for="hotel in hotels" :value="hotel.hotelId">{{hotel.hotelName}}</option>
             </select>
             <div tag="dateform" class="fl datepos mr10">
