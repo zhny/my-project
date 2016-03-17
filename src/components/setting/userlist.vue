@@ -10,6 +10,24 @@
       </div>
       <div>
         <div class="pb10 t14 clx">
+          <div class="date-box">
+            <form action="" method="get">
+              <select name="innid">
+                <option value="287" selected="selected">翰院壹号客栈</option>
+              </select>
+                  &nbsp;
+              <select name="selectuserid" id="selectuserid">
+                <option value="0">所有操作员</option>
+                <option value="264">掌柜</option>
+                <option value="2">系统</option>
+                <option value="67440">掌柜翰林</option>
+                <option value="67441">测试号</option>
+                <option value="67468">测试</option>                        
+              </select>
+              &nbsp;                          
+              <input id="searchbtn" type="button" class="btn btn-primary dealbtn" value="查询">
+            </form>
+          </div>
           <div class="chart-type">
             <ul class="clx">
               <li style="border-radius:5px;"><a href="javascript:;" @click="addUser">增加用户</a></li>
