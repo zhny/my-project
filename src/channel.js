@@ -1,8 +1,8 @@
 import './components/common/jquery'
 import Vue from 'vue'
-import App from './App'
+import ChannelApp from './ChannelApp'
 import VueRouter from 'vue-router'
-import { configRouter } from './route-config'
+import { configRouter } from './channel-route-config'
 
 
 Vue.config.debug = true
@@ -21,7 +21,7 @@ configRouter(router)
 // router.redirect({
 //   '/': '/hotel/roomstatus'
 // })
-router.start(App, '#app')
+router.start(ChannelApp, '#app')
 
 // just for debugging
 window.router = router
