@@ -99,7 +99,7 @@ export default{
   		//       	cb(handleResp(r);
   		//       });
   	},
-  	getChannels(d,cb){					//获取分销商列表
+  	getChannels(d,cb){					//获取分销渠道列表
 		setTimeout(function(){
 			cb(require('./data/channels'))
 		},500);
