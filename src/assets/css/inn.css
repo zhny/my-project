@@ -1240,7 +1240,7 @@ input.btn.btn-search{padding:12px 30px; font-size:16px; padding:10px 20px\9;}
 /*.li-delete {display:inline-block; height:20px; line-height:20px; padding:4px 30px 4px 10px; margin-left:-1px; border:1px solid #e9ac28; background:#fff4da url(../pic/li-delete.png) no-repeat 40px 6px; color:#000;}*/
 .li-delete:hover {background-color:#fff8e8; color:#000;}
 /*droplist*/
-/*.droplist{display:inline-block; width:118px; padding:0 20px 0 5px; border:1px solid #ccc; height:28px; line-height:28px; font-size:14px; color:#333; background:#f7f7f7 url(../pic/arrow_droplist.png) no-repeat right; position:relative; z-index:10; vertical-align:middle; cursor:pointer; *display:inline; *zoom:1; -webkit-transition:border .3s ease;}*/
+.droplist{display:inline-block; width:118px;border:1px solid #ccc;height:28px; line-height:28px; font-size:12px; color:#333; background:#f7f7f7; position:relative; z-index:10; vertical-align:middle; cursor:pointer; *display:inline; *zoom:1; -webkit-transition:border .3s ease;}
 .droplist_w {background-color:#fff; box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);}
 .droplist .value {display:block; height:20px; line-height:20px; padding:4px 0; white-space:nowrap; overflow:hidden;}
 .droplist .ip-dropdown {top:28px; left:-1px;}
@@ -1248,7 +1248,7 @@ input.btn.btn-search{padding:12px 30px; font-size:16px; padding:10px 20px\9;}
 .maxheight {max-height:150px; overflow-y:auto;}
 .droplist_on {border:1px solid #03a9f4; outline:0; z-index:15;}
 .droplist_not {cursor:not-allowed; color:#ccc;}
-
+.xiala{ border:none;}
 .hidden-input {
     opacity: 0;
     position: absolute;
@@ -1324,7 +1324,7 @@ input[type=checkbox]:checked+.selected_green {
 /*.yzg-mulcolumnlist-content .cur, .yzg-mulcolumnlist-content .cur:hover {background:#3bc8a7 url(../pic/h-mulcolumnlist.png) no-repeat right -90px; color:#fff;}*/
 
 /*order list*/
-.modal-body .orderinfo {position:relative;}
+.modal-body .orderinfo {height:20px;}
 .modal-body ul.cntlist li .orderinfo .tprice {width:150px; margin-right:0; text-align:right; color:#777; position:absolute; right:0; bottom:2px;}
 .modal-body ul.cntlist li .orderinfo .tprice span {font-size:16px;}
 .modal-body .orderinfo div {width:405px; font-size:12px; line-height:20px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}

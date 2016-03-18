@@ -79,20 +79,182 @@
     </div>
 </div>
 
+<modal :show.sync="showmodel">
+  <template slot="title">{{modalTitle}}</template>
+  <div  slot="body">
+    <ul class="cntlist" >
+      <li class="combo-input" style="width:163px;"> <span class="label-input fl">姓名</span>
+        <input id="o_guestname" class="fl" style="width:100px" type="text">
+        <i class="member" style="display:none"></i>
+        <div class="crmlist" style="display:none;">
+          <div class="item" style="display:none;">
+            <p></p>
+            <p>共住过8晚，消费3291元，平均单价<strong class="red">591</strong>元</p>
+          </div>
+        </div>
+      </li>
+      <li class="combo-input" style="width:195px;">
+        <span class="label-input fl">手机号</span>
+        <input id="o_phone" class="fl" style="width:120px" type="text">
+      </li>
+      <li style="width:150px;">
+        <select name="xiala" class="xiala" style="border:1px solid #ccc; font-size:12px;">
+          <option>自来客</option>
+          <option>自来客1</option>
+        </select>
+      </li>
+      <li class="over">
+        <div class="line"></div>
+      </li>
+      <li tag="orderroomlist" class="over pop-booking-room">
+        <div class="rmi clx">
+          <div id="selectDay" class="droplist fl" style="float: left;">
+            <select name="xiala" class="xiala" style="float: left;" >
+              <option>2016-02-22</option>
+            </select>
+          </div>
+          <div id="selectRoom" class="droplist fl" style="float: left;" >
+            <select name="xiala" class="xiala" style="width:120px; font-size:12px;float: left;" >
+              <option>朝天懒</option>
+            </select>
+            <div id="roomsBox" class="ip-dropdown" style="display:none; width:145px; z-index: 1000;">
+              <div style="max-height:170px; overflow-y:auto;"> </div>
+            </div>
+          </div>
+          <div id="selectNights" class="droplist fl" style="width:58px; margin-left:-1px;" value="1">
+            <select name="xiala" class="xiala" style="width:58px;font-size:12px;float: left;" >
+              <option>1晚</option>
+            </select>
+            <div id="rnsBox" class="ip-dropdown" style="display:none; width:63px; z-index: 1000;">
+              <div style="max-height:170px; overflow-y:auto;"> </div>
+            </div>
+          </div>
+          <input type="text" class="fl tr" style="width:50px; margin-left:-1px; margin-right:5px;">
+          <a class="add-book mt5" href="#"></a>
+        </div>
+        <div class="sum">
+          <span class="title">订单总额</span>
+          <strong >¥0</strong>
+          <i class="sale-num"style="display:none">10折</i></div>
+      </li>
+      <li class="over pop-booking-room" style="display: none;">
+        <div class="rmi clx">
+          <div class="droplist fl" style="width:108px;"> <span class="value"></span>
+            <div class="ip-dropdown" style="width:133px; z-index: 1000;display:none">
+              <div style="max-height:170px; overflow-y:auto;"></div>
+            </div>
+          </div>
+          <div t="selectcheckinnights" class="droplist fl" style="width:38px; margin-left:-1px;"> <span class="value"></span>
+            <div class="ip-dropdown" style="display:none; width:63px; z-index: 1000;">
+              <div style="max-height:170px; overflow-y:auto;" tag="tpllist"></div>
+            </div>
+          </div>
+          <div class="fl" style="position:relative;"> <span class="" style="position:absolute; left:5px; top:5px;">总价</span>
+            <input class="tr" style="width:70px; margin-left:-1px; margin-right:5px; padding-left:30px;">
+          </div>
+          <span class="fl mt5 ml5">（共0间房）</span> </div>
+      </li>
+      <li class="over pop-booking-room">
+        <div class="pop-booking-finance mt10 clx" >
+          <div class="fr"> <span class="fl mt5 light">收款：</span>
+            <input type="text" class="fl" style="width:50px; margin-right:0;">
+            <div class="droplist fl" style="width:63px; margin-left:-1px;">
+              <select name="xiala" class="xiala" style="width:63px;font-size:12px;float: left;" >
+                <option>支付宝</option>
+              </select>
+            </div>
+            <a title="删除该预订" class="del-book mr5 mt5" href="#" style="display:none"></a> </div>
+        </div>
+        <div class="pop-booking-finance mt10 clx" style="display:none">
+          <div class="fr"> <span class="fl mt5 light">退房费：</span>
+            <input type="text" name="roomrate" class="fl" style="width:50px; margin-right:0;">
+            <div class="droplist fl"  style="width:63px; margin-left:-1px;">
+              <select name="xiala" class="xiala" style="width:63px;font-size:12px;float: left;" >
+                <option>支付宝</option>
+              </select>
+            </div>
+            <a class="del-book mr5 mt5" href="#" style="display:none"></a> </div>
+        </div>
+        <div class="pop-booking-finance mt10 clx" >
+          <div class="fr addfinance"> <a href="#">添加收款 + </a>
+            <div class="ip-dropdown" style="">
+              <div>
+                <div><span class="placeholder">添加收款 + </span></div>
+                <div ><a href="#">收款</a></div>
+                <div ><a href="#">押金</a></div>
+                <div ><a href="#">其它消费</a></div>
+                <div ><a href="#">退房费</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pop-booking-finance clx" style="display:none">
+          <div class="fr"> <span class="fl mt5 light">押金：</span>
+            <input type="text"  style="width:50px; margin-right:0;" class="fl">
+            <div style="width:63px; margin-left:-1px;" class="droplist fl" >
+              <select name="xiala" class="xiala" style="width:50px;font-size:12px;float: left;" >
+                <option>支付宝</option>
+              </select>
+            </div>
+            <a class="del-book mr5 mt5" href="#" style="display:none" ></a> </div>
+        </div>
+        <div class="pop-booking-finance clx" style="display:none">
+          <div class="fr"> <span class="fl mt5 light">其它消费：</span>
+            <input type="text" name="consume" class="fl" style="width:50px; margin-right:0;">
+            <div class="droplist droplist_on fl" style="width:63px; margin-left:-1px;" > <span class="value">项目</span>
+              <div class="yzg-mulcolumnlist clx" style="display:none; width:200px;" >
+                <div class="yzg-mulcolumnlist-catalog" style="width:98px;">
+                  <div class="yzg-mulcolumnlist-heightfixed"> </div>
+                </div>
+                <div class="yzg-mulcolumnlist-content" style="width:98px;" t="typelist">
+                  <div class="yzg-mulcolumnlist-heightfixed"> </div>
+                </div>
+              </div>
+            </div>
+            <a class="del-book mr5 mt5" href="#" style="display:none"></a> </div>
+        </div>
+        <div class="pop-booking-record" style="display:none">
+          <div> <span class="title">已收</span><a href="#" class="t14 past">¥NaN</a> </div>
+          <div> <span class="title">待收</span><a class="t14 unpaid" href="#">¥NaN</a> </div>
+        </div>
+      </li>
+      <li class="over">
+        <div class="line"></div>
+      </li>
+      <li class="over">
+        <textarea id="o_remark" maxlength="1000" placeholder="备注信息" style="width:516px; height:50px"></textarea>
+      </li>
+      <li class="over" id="ordercolor">
+        <label class="fl ml20 t12 cursor-p" style="position: relative;margin-left: 30px;">
+          <input name="checkbox" type="checkbox" id="checkbox" value="1" class="hidden-input" >
+          提醒<span class="circle-btn"></span></label>
+        <label class="fr ml20 t12" style="position: relative;margin-right: 14px;">
+          <input ga="a" gname="order_担保" name="checkbox" class="hidden-input" type="checkbox" id="o_paystatus">
+          已担保<span class="circle-btn"></span></label>
+      </li>
+    </ul>
+  </div>
+  <template slot="footer">
+    <a class="fl btn btn-info">直接入住</a> 
+    <a class="btn btn-primary">提交订单</a> 
+  </template>
+</modal>
 
 </template>
 <script>
 import dateutil from '../common/dateutil'
 import orderform from './orderform'
 import api from '../common/api'
+import modal from '../common/modal'
 
 var theNow=new Date();
 export default {
   components:{
-    orderform
+    orderform,modal
   },
   data () {
     return {
+      showmodel:true,
       hotels:[],
       curHotel:{},
       roomStatus:[],
@@ -101,7 +263,8 @@ export default {
       endDate:new Date(theNow.getFullYear(),theNow.getMonth(),theNow.getDate()+7),
       selectedCell:{},
       curCell:'',
-      selectedCellStack:[]
+      selectedCellStack:[],
+      modalTitle:'预定'
     }
   },
   ready () {
