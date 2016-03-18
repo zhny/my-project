@@ -95,6 +95,5 @@ export default {
       $this.hotels=r;
     });
   }
-
 }
 </script>
