@@ -9,7 +9,7 @@ module.exports={
 	  		"roomTotalPrice":"1450",
 	  		"orgPrice":"300",
 	  		"createDate":"2016-03-16",
-	  		"checkInDate":"2016-03-16",
+	  		"checkInDate":"2016-03-17",
 	  		"guestName":"张三",
 	  		"phone":"136xxxxxx",
 	  		"channelCode":"0",
