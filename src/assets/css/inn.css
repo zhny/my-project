@@ -206,7 +206,6 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini{*padding-top:1px; *paddin
 /*.ico-code:hover{opacity:.7;}*/
 .ico-info-code:hover img{display: block; z-index: 9999;}
 
-
 /*.ico-ok, .ico-fail {display:inline-block; width:20px; height:20px; background:url(../pic/icon-status.png) no-repeat; vertical-align:-3px;;}*/
 .ico-ok {background-position:0 0;}
 .ico-fail {background-position:0 -20px;}
@@ -300,7 +299,7 @@ a.icon-table-delete:hover {background-position:-20px -60px;}
 .modal-body ul.cntlist li .tprice span:first-letter{font-size:18px; padding-right:5px}
 .modal-body ul.cntlist li a.close{display:inline-block; vertical-align:middle; font-size:20px; color:#c72525; float:none; opacity:.6; filter:alpha(opacity=60);}
 .modal-body ul.cntlist li a.close:hover{ opacity:1; filter:alpha(opacity=100);}
-/*.modal-body ul.cntlist li a.add-book, .modal-body ul.cntlist li a.del-book{display:inline-block; width:20px; height:20px; background:url(../pic/ico-book.png) no-repeat 0 0; vertical-align:middle; font-size:20px; float:none;}*/
+.modal-body ul.cntlist li a.add-book, .modal-body ul.cntlist li a.del-book{display:inline-block; width:20px; height:20px; background:url(../pic/ico-book.png) no-repeat 0 0; vertical-align:middle; font-size:20px; float:none;}
 .modal-body ul.cntlist li a.del-book{background-position:0 -30px;}
 .modal-body ul.cntlist li a.del-book:hover{background-position:-20px -30px;}
 .modal-body ul.cntlist li a.add-book:hover{background-position:-20px 0;}

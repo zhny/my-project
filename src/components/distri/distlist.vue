@@ -46,9 +46,7 @@
               <th width="100">返点时间</th>
               <th width="60">操作人</th>
             </tr>
-          </tbody>
-          <template v-for="row in distorders">
-            <tr>
+            <tr v-for="row in distorders">
               <td>{{row.orderId}}</td>
               <td>{{row.orderCreateDate}}</td>
               <td>{{row.hotelId}}</td>  
@@ -62,7 +60,7 @@
               <td>{{row.rebateDate}}</td>
               <td>{{row.userName}}</td>
             </tr>
-          </template>
+          </tbody> 
         </table>
         <div style="text-align:right; padding:10px;"><span class="mr20">未返点金额：{{orderStatistic.totalUnRebateAmount}}</span><span>已返点金额：{{orderStatistic.totalHadRebateAmount}}</span></div>
       </div>

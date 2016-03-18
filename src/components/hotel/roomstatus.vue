@@ -108,29 +108,18 @@
       </li>
       <li tag="orderroomlist" class="over pop-booking-room">
         <div class="rmi clx">
-          <div id="selectDay" class="droplist fl" style="float: left;">
-            <select name="xiala" class="xiala" style="float: left;" >
+            <select style="float:left; width:116px; margin-right:0; border-right:0;" >
               <option>2016-02-22</option>
             </select>
-          </div>
-          <div id="selectRoom" class="droplist fl" style="float: left;" >
-            <select name="xiala" class="xiala" style="width:120px; font-size:12px;float: left;" >
+            <select style="width:120px; font-size:12px;float: left; margin-right:0; border-right:0;" >
               <option>朝天懒</option>
             </select>
-            <div id="roomsBox" class="ip-dropdown" style="display:none; width:145px; z-index: 1000;">
-              <div style="max-height:170px; overflow-y:auto;"> </div>
-            </div>
-          </div>
-          <div id="selectNights" class="droplist fl" style="width:58px; margin-left:-1px;" value="1">
-            <select name="xiala" class="xiala" style="width:58px;font-size:12px;float: left;" >
+            <select style="width:58px;font-size:12px;float: left; margin-right:0; border-right:0;" >
               <option>1晚</option>
             </select>
-            <div id="rnsBox" class="ip-dropdown" style="display:none; width:63px; z-index: 1000;">
-              <div style="max-height:170px; overflow-y:auto;"> </div>
-            </div>
-          </div>
           <input type="text" class="fl tr" style="width:50px; margin-left:-1px; margin-right:5px;">
-          <a class="add-book mt5" href="#"></a>
+          <a title="删除该预订" class="del-book mr5 mt5" href="javascript:;" tag="removeroom"></a>
+          <a title="添加预订" class="add-book mt5" href="javascript:;" tag="addroom"></a>
         </div>
         <div class="sum">
           <span class="title">订单总额</span>
@@ -158,11 +147,9 @@
         <div class="pop-booking-finance mt10 clx" >
           <div class="fr"> <span class="fl mt5 light">收款：</span>
             <input type="text" class="fl" style="width:50px; margin-right:0;">
-            <div class="droplist fl" style="width:63px; margin-left:-1px;">
-              <select name="xiala" class="xiala" style="width:63px;font-size:12px;float: left;" >
-                <option>支付宝</option>
-              </select>
-            </div>
+            <select style="width:63px;font-size:12px;float: left; margin-right:0; border-left:0;" >
+              <option>支付宝</option>
+            </select>
             <a title="删除该预订" class="del-book mr5 mt5" href="#" style="display:none"></a> </div>
         </div>
         <div class="pop-booking-finance mt10 clx" style="display:none">
@@ -176,7 +163,7 @@
             <a class="del-book mr5 mt5" href="#" style="display:none"></a> </div>
         </div>
         <div class="pop-booking-finance mt10 clx" >
-          <div class="fr addfinance"> <a href="#">添加收款 + </a>
+          <div class="fr addfinance addfinance_on"> <a href="#" class="red" @click=""><i class="ico-finance mr5"></i>添加收款 + </a>
             <div class="ip-dropdown" style="">
               <div>
                 <div><span class="placeholder">添加收款 + </span></div>
