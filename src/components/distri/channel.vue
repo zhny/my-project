@@ -8,11 +8,11 @@
       <div class="page-header page-header-report clx">
         <div class="chart-type">
           <ul class="clx">
-            <li><a href="javascript:;" class="newChannel" @click="">新建渠道</a></li>
-            <li><a href="javascript:;" class="delChannel" @click="">删除渠道</a></li>
+            <li><a href="javascript:;" class="newChannel" @click="addChan">新建渠道</a></li>
+            <li><a href="javascript:;" class="delChannel" @click="delChan">删除渠道</a></li>
           </ul>
         </div>
-        <form action="">
+        <!-- <form action="">
           <div style="" class="date-box clx" id="reportid">
             <select class="fl mr10" v-model="channelCode">
               <option></option>
@@ -20,7 +20,7 @@
             </select>
             <input type="button" value="查询" class="fl btn btn-primary dealbtn" style="width:50px;" @click="search">
           </div>
-        </form>
+        </form> -->
       </div>
       <div>
         <table class="table table-striped table-bordered table-analytics">
@@ -43,12 +43,53 @@
               <td>{{row.phone}}</td>
               <td>{{row.rebate}}</td>
               <td></td>
-              <td><button @click="">编辑</button></td>
+              <td><a class="mr10" @click="editChan(row.id)" href="javascript:;">编辑</a></td>
             </tr>
           </tbody>  
         </table>
       </div>
   </div>
+  <modal :show.sync="showmodel">
+    <template slot="title">{{curChan.id?'编辑分销渠道':'新建分销渠道'}}</template>
+    <div slot="body" class="cntbox tab-content cntbox-ota" style="position:static;">
+        <div class="divider">
+            <ul class="inninfo mb10">
+                <li>
+                     <tt class="lab tr" style="width:120px;"><strong class="red">*</strong>分销渠道代码：</tt>
+                     <input type="text" name="" value="{{curChan.channelCode}}" style="width:220px;">
+                </li>
+                <li>
+                     <tt class="lab tr" style="width:120px;"><strong class="red">*</strong>分销渠道名称：</tt>
+                     <input type="text" name="" value="{{curChan.channelName}}" style="width:220px;">
+                </li>
+                <li>
+                     <tt class="lab tr" style="width:120px;"><strong class="red">*</strong>渠道负责人：</tt>
+                     <input type="text" name="" value="" style="width:220px;">
+                </li>
+                <li>
+                     <tt class="lab tr" style="width:120px;"><strong class="red">*</strong>联系方式：</tt>
+                     <input type="text" name="" value="{{curChan.phone}}" style="width:220px;">
+                </li>
+                <li>
+                     <tt class="lab tr" style="width:120px;"><strong class="red">*</strong>微信号：</tt>
+                     <input type="text" name="" value="" style="width:220px;">
+                </li>
+                <li>
+                     <tt class="lab tr" style="width:120px;"><strong class="red">*</strong>返点比例：</tt>
+                     <input type="text" name="" value="{{curChan.rebate}}" style="width:220px;">
+                </li>
+                <li>
+                     <tt class="lab tr" style="width:120px;">备注：</tt>
+                     <input type="text" name="" value="" style="width:320px;">
+                </li>
+                <li>
+                  <tt class="lab tr" style="width:120px;">&nbsp;</tt>
+                  <a class="btn btn-primary btn-small" href="javascript:;" @click="submitChan">确认新增渠道</a>
+                </li>
+            </ul>
+        </div>                
+    </div>
+  </modal>
 </template>
 
 <script>
@@ -62,6 +103,8 @@ export default {
       channels:[],
       channelCode:'',
       params:{},
+      showmodel:false,
+      curChan:{}
     }
   },
   components: {
@@ -77,6 +120,26 @@ export default {
     search:function(){
       this.params={channelCode:this.channelCode}
     },
+    addChan(){
+      this.curChan={},
+      this.showmodel=true;
+    },
+    editChan(id){
+      this.curChan = this.channels[--id];
+      this.showmodel=true;
+    },
+    delChan() {
+      if(confirm('确定删除所选的渠道?')){
+        api.delChan({userId:this.userId},function(r){
+          console.log("del:"+ids);
+        });
+      }
+    },
+    submitChan(){
+      api.submitChan(this.curChan,function(r){
+        this.showmodel=false;
+      });
+    }
   }
 }
 </script>

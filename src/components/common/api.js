@@ -127,4 +127,18 @@ export default{
 			cb(require('./data/logs'))
 		},500);
 	},
+	submitChan(d,cb){						//增加或修改分销渠道
+		alert("ok")
+		setTimeout(function(){
+			cb();
+		},500);
+		// $.post('/vhotel/addroom',wrapData(d),function(r){ 			//POST
+  		// 			cb(handleResp(r);
+  		// 		}); 
+  	},
+  	delChan(d,cb){					//删除渠道
+		setTimeout(function(){
+			cb();
+		},500);
+	},
 }

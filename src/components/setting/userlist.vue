@@ -44,7 +44,7 @@
             <ul class="inninfo mb10">
                 <li>
                      <tt class="lab tr">用户名：</tt>
-                     <input type="text" name="" value="" style="width:220px;">
+                     <input type="text" name="" value="{{curUser.account}}" style="width:220px;">
                 </li>
                 <li>
                      <tt class="lab tr">密码：</tt>
@@ -60,11 +60,11 @@
                 </li>
                 <li>
                      <tt class="lab tr">电话：</tt>
-                     <input type="text" name="" value="" style="width:220px;">
+                     <input type="text" name="" value="{{curUser.phone}}" style="width:220px;">
                 </li>
                 <li>
                      <tt class="lab tr">所属客栈：</tt>
-                     <input type="text" name="" value="" style="width:220px;">
+                     <input type="text" name="" value="{{curUser.hotelName}}" style="width:220px;">
                 </li>
                 <li>
                   <tt class="lab tr">&nbsp;</tt>
