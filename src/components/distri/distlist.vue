@@ -127,6 +127,7 @@ export default {
     },
     rebateReq:function(){
       //发送一个GET请求,传回orderIds,更新distorders
+      alert(this.orderIds);
       this.showmodel=false;
     }
   }
