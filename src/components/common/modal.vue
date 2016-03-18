@@ -1,10 +1,13 @@
 <template>
-<div v-show="show" class="bootbox modal view">
+<div v-show="show" class="bootbox modal w500">
 	<div class="modal-header"><a @click="show=false" class="close" href="javascript:;">×</a>
 		<h4 tag="title"><slot name="title"></slot></h4>
 	</div>
 	<div class="modal-body">
 		<slot name="body"></slot>
+	</div>
+	<div class="modal-footer">
+		<slot name="footer"></slot>
 	</div>
 </div>
 </template>
