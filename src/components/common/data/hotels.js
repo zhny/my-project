@@ -26,7 +26,7 @@ module.exports = [
           {
             "roomId":"4",
             "roomName":"嗟吁",
-            "price":"666"
+            "price":"777"
           },
         ]
       }

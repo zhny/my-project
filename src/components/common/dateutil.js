@@ -1,6 +1,9 @@
 var dateutil = module.exports ={};
 
 dateutil.parseDate=function(str){
+    if(str==undefined||str==""){
+        return null;
+    }
 	var arr=str.split('-');
 	return new Date(arr[0],parseInt(arr[1])-1,arr[2]);
 }

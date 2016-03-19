@@ -63,7 +63,7 @@
                 <td>¥320</td>
                 <td>掌柜</td>
                 <td>已退房</td>
-                <td class="tc"><a href="#">查看订单</a></td>
+                <td class="tc"><a  href="javascript:;" @click="viewOrder(row.orderId,row.orderItems[0].roomId)">查看订单</a></td>
               </tr>
               <tr v-for="item in row.orderItems | limitBy row.orderItems.length-1 1">
                 <td>02/19 12:48</td>
@@ -72,7 +72,7 @@
                 <td>¥320</td>
                 <td>掌柜</td>
                 <td>已退房</td>
-                <td class="tc"><a href="javascript:;" @click="viewOrder(row)">查看订单</a></td>
+                <td class="tc"><a href="javascript:;" @click="viewOrder(row.orderId,row.orderItems[$index+1].roomId)">查看订单</a></td>
               </tr>
             </template>
             
@@ -82,16 +82,22 @@
       </div>
     </div>
   </div>
+  <order-detail v-if="showDetail" :show.sync="showDetail" :order-id="orderId" :room-id="roomId"></order-detail>
+  <check-in-rooms v-if="showCheckIn" :show.sync="showCheckIn" :order-id="orderId" :room-id="roomId"></check-in-rooms>
+  <check-Out-rooms v-if="showCheckOut" :show.sync="showCheckOut" :order-id="orderId" :room-id="roomId"></check-Out-rooms>
 </template>
 
 <script>
 import datepick from '../common/datepick'
 import api from '../common/api'
 import pagebar from '../common/pagebar'
+import orderDetail from './orderDetail'
+import checkInRooms from './checkInRooms'
+import checkOutRooms from './checkOutRooms'
 
 export default {
   components:{
-    datepick,pagebar
+    datepick,pagebar,orderDetail,checkInRooms,checkOutRooms
   },
   data () {
     return {
@@ -104,7 +110,12 @@ export default {
       curRoom:'',
       params:{},
       curRows:[],
-      counts:0
+      counts:0,
+      showDetail:false,
+      showCheckIn:false,
+      showCheckOut:false,
+      orderId:0,
+      roomId:0
     }
   },
   ready () {
@@ -139,6 +150,11 @@ export default {
         endDate:this.endDate,
         orderStatus:this.orderStatus
       }
+    },
+    viewOrder(orderId,roomId){
+      this.orderId=orderId;
+      this.roomId=roomId;
+      this.showDetail=true;
     }
   }
 }

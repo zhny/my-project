@@ -1,0 +1,22 @@
+module.exports=[
+	{  
+		id:0,
+		name:"身份证"
+	},
+	{
+		id:1,
+		name:"护照"
+	},
+	{
+		id:2,
+		name:"军官证"
+	},
+	{
+		id:3,
+		name:"港澳通行证"
+	},
+	{
+		id:4,
+		name:"其他"
+	}
+]

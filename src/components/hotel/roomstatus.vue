@@ -48,7 +48,7 @@
                 <table cellpadding="0" cellspacing="0" border="0" t="content">
                   <tr v-for="(rk,row) in roomStatus">
                     <td v-for="(ck,col) in row" :class="{'td-selected':selectedCell[rk][ck]}" @click="toggleCell(rk,ck,col)" >
-                      <div v-if="col.order" class="date-have ui-sortable"  :style="{width:(100*col.order.nights)+'%'}">
+                      <div v-if="col.order" @click="showDetailModal(col.order.orderId,col.order.roomId)" class="date-have ui-sortable"  :style="{width:(100*col.order.nights)+'%'}">
                         <div class="date-day-checkedout ogray" style="height: 40px;">
                           <p class="">{{col.order.guestName}}</p>
                           <p class="t12 light">{{col.order.channelName}}</p>
@@ -79,114 +79,29 @@
     </div>
 </div>
 
-<modal :show.sync="showmodel">
-  <template slot="title">{{modalTitle}}</template>
-  <div slot="body">
-    <ul class="cntlist" >
-      <li class="combo-input" style="width:163px;"> 
-        <span  class="label-input fl">姓名</span>
-        <input class="fl" style="width:100px" type="text">
-      </li>
-      <li class="combo-input" style="width:195px;">
-        <span  class="label-input fl">手机号</span>
-        <input class="fl" style="width:120px" type="text">
-      </li>
-      <li style="width:150px;">
-        <select class="xiala" style="border:1px solid #ccc; font-size:12px;">
-          <option>自来客</option>
-          <option>自来客1</option>
-        </select>
-      </li>
-      <li class="over">
-        <div class="line"></div>
-      </li>
-      <li tag="orderroomlist" class="over pop-booking-room">
-        <div class="rmi clx">
-            <select style="float:left; width:116px; margin-right:0; border-right:0;" >
-              <option>2016-02-22</option>
-            </select>
-            <select style="width:120px; font-size:12px;float: left; margin-right:0; border-right:0;" >
-              <option>朝天懒</option>
-            </select>
-            <select style="width:58px;font-size:12px;float: left; margin-right:0; border-right:0;" >
-              <option>1晚</option>
-            </select>
-          <input type="text" class="fl tr" style="width:50px; margin-left:-1px; margin-right:5px;">
-          <a title="删除该预订" class="del-book mr5 mt5" href="javascript:;" tag="removeroom"></a>
-          <a title="添加预订" class="add-book mt5" href="javascript:;" tag="addroom"></a>
-        </div>
-        <div class="sum">
-          <span class="title">订单总额</span>
-          <strong >¥0</strong>
-        </div>
-      </li>
-      
-      <li class="over pop-booking-room">
-        <div class="pop-booking-finance mt10 clx" >
-          <div class="fr"> <span class="fl mt5 light">收款：</span>
-            <input type="text" class="fl" style="width:50px; margin-right:0;">
-            <select style="width:63px;font-size:12px;float: left; margin-right:0; border-left:0;" >
-              <option>支付宝</option>
-            </select>
-            <a title="删除该预订" class="del-book mr5 mt5" href="#" style=""></a> </div>
-        </div>
-        <div class="pop-booking-finance mt10 clx" >
-          <div class="fr addfinance addfinance_on"> 
-            <a href="#" class="red"><i class="ico-finance mr5"></i>添加收款 + </a>
-            <div class="ip-dropdown" style="">
-              <div>
-                <div><span class="placeholder">添加收款 + </span></div>
-                <div ><a href="#">收款</a></div>
-                <div ><a href="#">押金</a></div>
-                <div ><a href="#">其它消费</a></div>
-                <div ><a href="#">退房费</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="pop-booking-record" style="">
-          <div> <span class="title">已收</span><a href="#" class="t14 past">¥NaN</a> </div>
-          <div> <span class="title">待收</span><a class="t14 unpaid" href="#">¥NaN</a> </div>
-        </div>
-      </li>
-      <li class="over">
-        <div class="line"></div>
-      </li>
-      <li class="over">
-        <textarea id="o_remark" maxlength="1000" placeholder="备注信息" style="width:516px; height:50px"></textarea>
-      </li>
-      <li class="over" id="ordercolor">
-        <label class="fl ml20 t12 cursor-p" style="position: relative;margin-left: 30px;">
-          <input name="checkbox" type="checkbox" id="checkbox" value="1" class="hidden-input" >
-          提醒<span class="circle-btn"></span></label>
-        <label class="fr ml20 t12" style="position: relative;margin-right: 14px;">
-          <input ga="a" gname="order_担保" name="checkbox" class="hidden-input" type="checkbox" id="o_paystatus">
-          已担保<span class="circle-btn"></span></label>
-      </li>
-    </ul>
-  </div>
-  <template slot="footer">
-    <a class="fl btn btn-info">直接入住</a> 
-    <a class="btn btn-primary">提交订单</a> 
-  </template>
-</modal>
+<reserve-rooms v-if="showReserve" :show.sync="showReserve" :cur-order="curOrder" :cur-rooms="curRooms"></reserve-rooms>
+<order-detail v-if="showDetail" :show.sync="showDetail" :order-id="orderId" :room-id="roomId"></order-detail>
+<check-in-rooms v-if="showCheckIn" :show.sync="showCheckIn" :order-id="orderId" :room-id="roomId"></check-in-rooms>
+<check-Out-rooms v-if="showCheckOut" :show.sync="showCheckOut" :order-id="orderId" :room-id="roomId"></check-Out-rooms>
 
 </template>
 <script>
 import dateutil from '../common/dateutil'
-import orderform from './orderform'
 import api from '../common/api'
-import modal from '../common/modal'
+import reserveRooms from './reserveRooms'             //加载订房
+import orderDetail from './orderDetail'               //订单详情
+import checkInRooms from './checkInRooms'             //入住
+import checkOutRooms from './checkOutRooms'           //退房
 
 var theNow=new Date();
 export default {
   components:{
-    orderform,modal
+    reserveRooms,orderDetail,checkInRooms,checkOutRooms
   },
   data () {
-    return {
-      showmodel:false,                  
+    return {              
       hotels:[],                                        //所有客栈、房型
+      curRooms:{},                                      //当前客栈的所有房间
       curHotel:{},                                      //当前选中的客栈
       roomStatus:[],                                    //渲染页面的表格数据
       now:theNow,                                       //今天
@@ -195,12 +110,17 @@ export default {
       selectedCell:{},                                  //用于标记cell的选中状态true或者false
       curCell:'',                                       //当前最后一个选中的cell
       selectedCellStack:[],                             //选中的cell 栈
-      modalTitle:'',
-      curOrder:{
+      curOrder:{                                        //当前订单
         guestName:"",
         phone:"",
         items:[]
-      }                                    
+      },
+      showReserve:false,                                //显示预定
+      showDetail:false,
+      showCheckIn:false,
+      showCheckOut:false,
+      orderId:0,
+      roomId:0                        
     }
   },
   ready () {
@@ -228,21 +148,21 @@ export default {
     }
   },
   methods:{
-    isToday:function isToday(d){
+    isToday (d){
       return dateutil.format(this.now,'yyyy-MM-dd')==dateutil.format(d,'yyyy-MM-dd');
     },
-    prev10:function(){
+    prev10 (){
       this.startDate=new Date(this.startDate.getFullYear(),this.startDate.getMonth(),this.startDate.getDate()-10);
       this.endDate=new Date(this.endDate.getFullYear(),this.endDate.getMonth(),this.endDate.getDate()-10);
     },
-    next10:function(){
+    next10 (){
       this.startDate=new Date(this.startDate.getFullYear(),this.startDate.getMonth(),this.startDate.getDate()+10);
       this.endDate=new Date(this.endDate.getFullYear(),this.endDate.getMonth(),this.endDate.getDate()+10);
     },
-    changeHotel:function(hotel){
+    changeHotel(hotel){
       this.curHotel=hotel;
     },
-    toggleCell:function(rk,ck,col){            //点击选中或不选中某格
+    toggleCell(rk,ck,col){            //点击选中或不选中某格
       if(col.order==undefined){
         var temp= Object.assign({}, this.selectedCell, {});
         temp[rk][ck]=!(this.selectedCell[rk][ck]);
@@ -264,9 +184,7 @@ export default {
         }
       } 
     },
-    toReserveRooms:function(){                      //到订房操作页
-      this.modalTitle="预定";
-      this.showmodel=true;
+    toReserveRooms (){                      //到订房操作页
       var items={};
       var resultItems=[];
       for(var i in this.selectedCellStack){
@@ -276,42 +194,41 @@ export default {
         }
         items[cellKey[0]].push(cellKey[1]);
       }
-      // if((dateutil.parseDate(_key2)-dateutil.parseDate(_key1))/86400000==1){
 
       for(var i in items){
-        if(items[i].length==1){
-          resultItems.push({
-            roomId:i,
+        var lastRecord=Object.assign({}, this.curRooms[i], {
             checkInDate:items[i][0],
             nights:1
-          });
+        });
+        if(items[i].length==1){
+
+          resultItems.push(lastRecord);
           continue;
         }
         items[i].sort();
 
-        var lastRecord={
-          roomId:i,
-          checkInDate:items[i][0],
-          nights:1
-        };
 
         var lastDate=dateutil.parseDate(items[i][0]);
-        for(var x=0;x<items[i].length;x++){
+        for(var x=1;x<items[i].length;x++){
           var curDate=dateutil.parseDate(items[i][x]);
+
           if((curDate-lastDate)/86400000==1){             //日期连续、不推入,且当前记录的入住晚上+1
             lastRecord.nights++;
-          }else{                                          //日期不连续，将上一个对象推入,，重置上一个对象
+          }else{                           //日期不连续，将上一个对象推入,重置上一个对象
             resultItems.push(lastRecord);
-            lastRecord={
-              roomId:i,
-              checkInDate:items[i][x],
-              nights:1
-            };
+            lastRecord=Object.assign({}, this.curRooms[i], {
+                checkInDate:items[i][x],
+                nights:1
+            });
           }
           lastDate=curDate;
+          if(x==items[i].length-1){   //若果是最后一个对象，则强行推入
+            resultItems.push(lastRecord);
+          }
         }
       }
-      console.log(resultItems);
+      this.curOrder.items=resultItems;
+      this.showReserve=true;
     },
     renderHotels () {
       var $this=this;
@@ -323,7 +240,15 @@ export default {
         }
       });
     },
-
+    renderCurRooms (){                    //加载当前客栈的所有房间
+      this.curRooms={};                   //清空之前的的房间
+      for(var t in this.curHotel.types){
+        for(var r in this.curHotel.types[t].rooms){
+          var room=this.curHotel.types[t].rooms[r];
+          this.curRooms[room.roomId]=room;
+        }
+      }
+    },
     renderRooms (){
       var $this=this;
 
@@ -364,6 +289,11 @@ export default {
             $this.roomStatus=emptyRoomStatus;
         });
       }
+    },
+    showDetailModal(orderId,roomId){
+      this.orderId=orderId;
+      this.roomId=roomId;
+      this.showDetail=true;
     }
   },
   filters:{
@@ -373,6 +303,7 @@ export default {
   },
   watch:{
     curHotel () {
+      this.renderCurRooms();
       this.renderRooms();
     },
     startDate () {

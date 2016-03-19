@@ -1,13 +1,15 @@
 module.exports={
   	rows:[                                  
 	  	{
-	  		"orderId":"1",
+	  		"orderId":1,
 	  		"roomId":"1",
 	  		"guestName":"张三1",
 	  		"phone":"136xxxxxx",
 	  		"channelName":"熟客及推介",
+	  		"channelCode":"0",
 	  		orderItems:[
 	  			{
+	  				"orderItemId":1,
 	  				"created":"2016-03-17",
 					"createDate":"2016-03-16",
 		  			"checkInDate":"2016-03-16",
@@ -17,6 +19,7 @@ module.exports={
 		  			orderItemStatus:2
 	  			},
 	  			{
+	  				"orderItemId":2,
 	  				"created":"2016-03-17",
 					"createDate":"2016-03-16",
 		  			"checkInDate":"2016-03-16",
@@ -29,13 +32,15 @@ module.exports={
 	  		
 	  	},
 	  	{
-	  		"orderId":"1",
+	  		"orderId":2,
 	  		"roomId":"1",
 	  		"guestName":"张三2",
 	  		"phone":"136xxxxxx",
 	  		"channelName":"熟客及推介",
+	  		"channelCode":"1",
 	  		orderItems:[
 	  			{
+	  				"orderItemId":3,
 	  				"created":"2016-03-17",
 					"createDate":"2016-03-16",
 		  			"checkInDate":"2016-03-16",
@@ -45,6 +50,7 @@ module.exports={
 		  			orderItemStatus:2
 	  			},
 	  			{
+	  				"orderItemId":4,
 	  				"created":"2016-03-17",
 					"createDate":"2016-03-16",
 		  			"checkInDate":"2016-03-16",
@@ -56,7 +62,7 @@ module.exports={
 	  		]
 	  		
 	  	},{
-	  		"orderId":"1",
+	  		"orderId":3,
 	  		"roomId":"1",
 	  		"guestName":"张三3",
 	  		"phone":"136xxxxxx",
@@ -84,7 +90,7 @@ module.exports={
 	  		
 	  	},
 	  	{
-	  		"orderId":"1",
+	  		"orderId":4,
 	  		"roomId":"1",
 	  		"guestName":"张三4",
 	  		"phone":"136xxxxxx",

@@ -141,4 +141,15 @@ export default{
 			cb();
 		},500);
 	},
+	getPayMethods(d,cb){
+		setTimeout(function(){
+			cb(require('./data/payMethods'));
+		},500);
+	},
+	roomorder(d,cb){
+		setTimeout(function(){
+			cb(require('./data/roomOrderInfo'));
+		},500);
+	}
+	
 }
