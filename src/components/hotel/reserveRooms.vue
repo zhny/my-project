@@ -88,7 +88,7 @@
 			</ul>
 		</div>
 		<template slot="footer">
-			<a class="fl btn btn-info">直接入住</a> 
+			<a class="fl btn btn-info" href="javascript:;" @click="reserveToCheckin">直接入住</a> 
 			<a class="btn btn-primary" href="javascript:;" @click="reserve">提交订单</a> 
 		</template>
 	</modal>
@@ -123,7 +123,9 @@ export default {
 			default:function(){
 				return {};
 			}
-		}
+		},
+		orderId:0,
+		roomId:0
 	},
 	data () {
 		return {
@@ -180,6 +182,18 @@ export default {
 	        	payList:this.curOrderPayList
 	      	}
 	      	console.log(postData);
+	      	this.show=false;
+	    },
+	    reserveToCheckin(){						//直接入住
+	    	var postData={						//先预定
+	        	orderHeader:this.curOrder,
+	        	payList:this.curOrderPayList
+	      	}
+	      	console.log(postData);				
+	      	this.orderId=1;
+	      	this.roomId=1;
+			this.$parent.showCheckIn=true;
+	      	this.show=false;
 	    }
 	},
 	filters:{

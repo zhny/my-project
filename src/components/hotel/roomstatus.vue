@@ -79,7 +79,7 @@
     </div>
 </div>
 
-<reserve-rooms v-if="showReserve" :show.sync="showReserve" :cur-order="curOrder" :cur-rooms="curRooms"></reserve-rooms>
+<reserve-rooms v-if="showReserve" :show.sync="showReserve" :cur-order="curOrder" :cur-rooms="curRooms" :order-id.sync="orderId" :room-id.sync="roomId"></reserve-rooms>
 <order-detail v-if="showDetail" :show.sync="showDetail" :order-id="orderId" :room-id="roomId"></order-detail>
 <check-in-rooms v-if="showCheckIn" :show.sync="showCheckIn" :order-id="orderId" :room-id="roomId"></check-in-rooms>
 <check-Out-rooms v-if="showCheckOut" :show.sync="showCheckOut" :order-id="orderId" :room-id="roomId"></check-Out-rooms>
@@ -284,7 +284,15 @@ export default {
             var orders=r.roomStatus;
             for(var i in orders){
               var order=orders[i];
-              emptyRoomStatus[order.roomId][order.checkInDate]['order']=order;
+              var _checkInDate=dateutil.parseDate(order.checkInDate);     //处理边界
+              if(_checkInDate<$this.startDate){                                  //如果入住时间小于开始时间,判断时间差，nights减相应值
+                var nightsDiff=($this.startDate-_checkInDate)/86400000;
+                order.nights-=nightsDiff;
+                var _startDateFormat=dateutil.format($this.startDate,'yyyy-MM-dd');
+                emptyRoomStatus[order.roomId][_startDateFormat]['order']=order;
+              }else{
+                emptyRoomStatus[order.roomId][order.checkInDate]['order']=order;
+              }
             }
             $this.roomStatus=emptyRoomStatus;
         });

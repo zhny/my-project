@@ -10,7 +10,7 @@
       <a :class="{'active':isurl('/hotel')}" v-link="{ path: '/hotel/roomstatus' }">房态</a>
       <a class="" href="../stats/budget.html">统计</a>
       <a :class="{'active':isurl('/customer')}" v-link="{ path: '/customer/infos' }">客户</a>
-      <a href="../marketing/weibo.html">营销</a>
+      <!-- <a href="../marketing/weibo.html">营销</a> -->
       <a :class="{'active':isurl('/setting')}" v-link="{ path: '/setting/userlist' }">设置</a>
       <a :class="{'active':isurl('/log')}" v-link="{ path: '/log' }">日志</a>
       <a :class="{'active':isurl('/distri')}" v-link="{ path: '/distri/distlist' }">分销管理</a>
