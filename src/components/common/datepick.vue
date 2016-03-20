@@ -4,6 +4,7 @@
     font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei";
     -webkit-font-smoothing: antialiased;
     color: #333;
+    display:inline-block;
 }
 .datetime-picker * {
     box-sizing: border-box;
@@ -92,7 +93,7 @@
 </style>
 
 <template>
-    <div class="datetime-picker" :style="parentStyle">
+    <div class="datetime-picker" >
         <input
             type="text"
             :style="styleObj"
@@ -138,14 +139,7 @@
             readonly: { type: Boolean, default: false },
             value: { type: String, default: '' },
             format: { type: String, default: 'YYYY-MM-DD' },
-            styleObj:{type:String,default:''},
-            parentStyle:{type:String,default (){
-                    return {
-                        width:'100px',
-                        display: 'inline-block'
-                    }
-                }
-            }
+            styleObj:{type:String,default:''}
         },
         data () {
             return {

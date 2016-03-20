@@ -23,7 +23,9 @@
 				</li>
 				<li class="over pop-booking-room">
 					<div class="rmi clx" v-for="item in curOrder.items">
-						<datepick :value.sync="curOrder.items[$index].checkInDate" style-obj="float:left; width:116px; margin-right:0; border-right:0;" parent-style="{width:'100px',display: 'inline-block'}"></datepick> 
+						<div style="float:left; width:95px; margin-right:0; border-right:0;display:inline-block">
+							<datepick :value.sync="curOrder.items[$index].checkInDate"></datepick> 
+						</div>
 						<select v-model="curOrder.items[$index].roomId" @change="changeItemRoom($index)" style="width:100px;font-size:12px;float: left; margin-right:0; border-right:0;" >
 							<option v-for="(roomId,room) in curRooms" :value="roomId" :selected="roomId==item.roomId">{{room.roomName}}</option>
 						</select>
