@@ -1,6 +1,4 @@
-import './assets/css/inn'
-import './assets/css/inn-ota'
-import './assets/css/custom'
+import './assets/css/style'
 import './components/common/jquery'
 
 import Vue from 'vue'
@@ -23,5 +21,8 @@ const router = new VueRouter({
 
 configRouter(router)
 router.start(App, '#app')
+router.redirect({
+  '/': '/home'
+});
 // just for debugging
 window.router = router

@@ -1,13 +1,18 @@
 <template>
-  <div class="main">
-    消费者页面
-  </div>
+  	<header class="inn-header">
+	    <h2 class="title">翰林客栈{{pageTitle}}</h2>
+	    <a v-link="{ path: '/login' }" class="login-link"></a>
+	</header>
+	<router-view transition-mode="out-in"></router-view>
+	<footer class="inn-footer">
+	  <p>© 2015 云掌柜 京ICP证130068号 京公网安备11010802010798号</p>
+	</footer>
 </template>
 
 <script>
 export default {
-  methods: {
-    isurl:require('./components/common/isurl')
-  }
+	methods: {
+	isurl:require('./components/common/isurl')
+	}
 }
 </script>

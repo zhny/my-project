@@ -1,0 +1,590 @@
+﻿/* RESET STYLES */
+html, body, body div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, span
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, figure, footer, header, 
+hgroup, menu, nav, section,
+time, mark, audio, video {
+  border:0;
+  outline:0;
+  vertical-align:baseline;
+  background:transparent none no-repeat 0 0;
+  font-weight: normal;
+}
+
+article, aside, figure, footer, header, hgroup, nav, section { display:block; }
+
+ul { list-style:none; } 
+
+blockquote, q { quotes:none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content:''; content:none; }
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+
+del { text-decoration: line-through; }
+abbr[title], dfn[title] { border-bottom:1px dotted #000; cursor:help; }
+table { border-collapse:collapse; border-spacing:0;  font-size:inherit; table-layout: fixed; }
+input, select { vertical-align:middle; color: #282828; }
+pre, code, kbd, samp { font-family: monospace, sans-serif; }/ 
+h1,h2,h3,h4,h5,h6 { font-weight: bold; text-rendering: optimizeLegibility; }
+html { -webkit-font-smoothing: antialiased; }
+body { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif; }
+* { margin:0; padding:0; }
+textarea { resize:none; }
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+a  { text-decoration:none; color:#333;}
+a:link, a:visited, a:hover, a: active { outline: none; }
+a:focus { outline: 1px dotted #f3f3f3; }
+ol { list-style-type: decimal; }
+
+small { font-size:85%; }
+strong{ font-weight: bold; }
+sub { vertical-align: sub; font-size: smaller; }
+sup { vertical-align: super; font-size: smaller; }
+
+.ie6 input { vertical-align: middle; }
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+::-moz-selection{ background: #484848; color:#fff; text-shadow: none; }
+::selection { background:#484848; color:#fff; text-shadow: none; } 
+html { overflow-y: scroll; }
+button {  width: auto; overflow: visible; }
+.ie7 img { -ms-interpolation-mode: bicubic; }
+/* RESET STYLES END HERE */
+
+/* unify styles */
+.fl { float: left; }
+.fr { float: right; }
+.left { text-align: left; }
+.right { text-align: right; }
+.center { text-align: center; }
+.indent { text-indent: 2em; }
+.clearfix:after { content:"."; display: block; height: 0; clear: both; visibility: hidden; }
+.hide { display: none !important; }
+.blur-input { color: #ccc; }
+* { box-sizing: border-box; }
+address { font-style: normal; }
+/* 
+ *mobile styles 
+*/
+html {
+	background-color: #fff;
+	color: #212121;
+	font-size: 100px;
+}
+body {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.5;
+	font-family: Helvetica Neue, Helvetica, STHeiTi, sans-serif;
+} 
+
+.wrapper {
+	padding: 0.4rem 0 0.3rem;
+}
+.wrapper.home {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: auto;
+	background: url(../img/home.jpg) top left no-repeat;
+	background-size: cover; 
+}
+
+.inn-footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 0.3rem;
+	line-height: 0.3rem;
+	background: rgba(255,255,255,.8);
+	z-index: 100;
+}
+.inn-footer p {
+	text-align: center;
+	font-size: 0.1rem;
+}
+.inn-header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding: 0 0.2rem;
+	background: #fc5810;
+	overflow: hidden;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	z-index: 100;
+}
+.inn-header .title {
+	font-size: 0.2rem;
+	color: #fff;
+	text-align: center;
+}
+.inn-header a {
+	display: block;
+	position: absolute;
+	font-size: 0.14rem;
+	color: #fff;
+}
+.inn-header a.login-link {
+	right: 0;
+	top: 0;
+	width: 0.4rem;
+	height: 0.4rem;
+	background: url(../img/user_sign.png) center center no-repeat;
+	background-size: 0.15rem 0.175rem;
+}
+.inn-header a.back-link {
+	left: 0;
+	top: 0;
+	height: 0.4rem;
+	padding-left: 0.3rem;
+}
+.inn-header a.back-link i {
+	position: absolute;
+	top: 50%;
+	left: 0.15rem;
+	margin-top: -0.1rem;
+	display: block;
+  	width: .2rem;
+  	height: .2rem;
+  	border-color: #fff; 
+}
+.icon-ar {
+	border-style: solid;
+	transform: rotate(45deg);
+  	-webkit-transform: rotate(45deg);
+  	-ms-transform:rotate(45deg);
+	-moz-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+}
+.icon-b {	
+	border-left-width: 1px;
+  	border-bottom-width: 1px;  	
+}
+.icon-f {
+	border-top-width: 1px;
+  	border-right-width: 1px;
+}
+.icon-u {	
+	border-left-width: 1px;
+  	border-top-width: 1px;  	
+}
+.icon-d {
+	border-bottom-width: 1px;
+  	border-right-width: 1px;
+}
+
+.h-main { 
+	padding: 0.2rem 0;
+	background: rgba(255,255,255,.8);
+}
+.search-form {
+	padding: 0.15rem;
+	background: #fff;
+}
+.search-list {
+	margin-bottom: 0.2rem;
+}
+.search-item {
+	position: relative;
+	padding-left: 0.7rem;
+	height: 0.5rem;
+	line-height: 0.5rem;
+}
+.search-item .mark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+    width: 0.7rem;
+    color: #999;
+}
+.search-item .cont {
+    background-image: -webkit-linear-gradient(#ccc, #ccc);
+    background-image: -ms-linear-gradient(#ccc, #ccc);
+    background-image: -moz-linear-gradient(#ccc, #ccc);
+    background-image: -o-linear-gradient(#ccc, #ccc);
+    background-image: linear-gradient(#ccc, #ccc);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: center 0.42rem;
+}
+.search-list .search-item .cont {
+	display: block;
+	width: 100%;
+	height: 0.5rem;
+    padding-left: 0.1rem;
+}
+.search-list .search-item span.cont{
+	line-height: 0.5rem;
+}
+.search-list .search-item input.cont{
+	line-height: normal;
+}
+.search-item input,
+.search-item select {
+	border: none;
+	outline: none;
+}
+.search-item i {
+	position: absolute;
+	top: 50%;
+	right: 0.05rem;
+	margin-top: -0.06rem;
+	display: block;
+  	width: .12rem;
+  	height: .12rem;
+  	border-color: #ccc; 
+}
+.inn-btn {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    border: 1px solid #fc5810;
+    border-radius: 0.02rem;
+    background: #fc5810;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+.inn-btn-packed {
+    display: block;
+    width: 100%;
+    height: 0.36rem;
+    line-height: 0.36rem;
+    font-size: 0.14rem;
+}
+
+.hotels	{
+	display: none;
+	position: fixed;
+	left: 100%;
+	width: 100%;
+	height: 100%;
+	padding-top: 0.4rem;
+	overflow: auto;
+	background: #fff;
+	z-index: 90;
+}
+.hotels h2 {
+	position: relative;
+	padding-left: 0.15rem;
+	background: #ccc;
+	font-size: 0.14rem;
+	line-height: 0.3rem;
+	color: #fff;
+}
+.hotels h2 i {
+	position: absolute;
+	top: 50%;
+	right: 0.15rem;
+	margin-top: -0.06rem;
+	display: block;
+  	width: .12rem;
+  	height: .12rem;
+  	border-color: #fff; 
+}
+.hotels ul {
+	padding: 0.15rem;
+}
+.hotels ul li {
+	display: block;
+	margin-bottom: 0.2rem;
+	height: 1rem;
+	box-shadow: 1px 1px 2px 1px  #ccc;
+}
+.hotels ul li img {
+	float: left;
+	width: 1rem;
+	height: 1rem;
+	margin-right: 0.1rem;
+}
+.hotels ul li h3 {
+	color: #003580; 
+	line-height: 0.3rem;
+}
+.hotels ul li address {
+	font-size: 0.1rem;
+	line-height: 0.24rem;
+}
+.hotels ul li p.features {
+	margin-top: 0.2rem;
+	line-height: 0.26rem; 
+	overflow: hidden;
+}
+.hotels ul li p.features span {
+	float: left;
+	display: inline-block;
+	margin-right: 0.1rem;
+	height: 0.26rem;
+}
+
+.inn-main {
+	background: #fff;
+}
+.inn-top {
+	position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.switch-pics {
+	overflow: hidden;
+	white-space: nowrap;
+} 
+.switch-pics li {
+	display: inline-block;
+	overflow: hidden;
+	width: 100%;
+	float: left;
+}
+.switch-pics li img {
+	width: 100%;
+	height: auto;
+	float: left;
+}
+.inn-top h2{
+    padding: 0.06rem 0.12rem;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.16rem;
+    color: #fff;
+    background: rgba(31, 30, 35, 0.4);
+}
+.inn-detail {
+	padding: 0 0.15rem;
+	line-height: 0.4rem;
+}
+.inn-det-flex {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -o-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.inn-det-flex .inn-det-dategap {
+	width: 0.2rem;
+	line-height: 0.4rem;
+	text-align: center;
+}
+.inn-det-flex .inn-det-date {
+	position: relative;
+	-moz-box-flex: 1;
+	-webkit-box-flex: 1;
+	-o-box-flex: 1;
+	-ms-box-flex: 1;
+	flex: 1;
+}
+.inn-det-flex .inn-det-date input {
+	display: block;
+	width: 100%;
+	padding-left: 0.5rem;
+	border: none;
+	outline: none;
+	background: #ccc;
+	line-height: 0.4rem;
+	height: 0.4rem;
+	/*vertical-align: middle;*/
+}
+.inn-det-flex .inn-det-date span {
+	position: absolute;
+	top: 0;
+	display: block;
+	width: 0.5rem;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	padding-left: 0.05rem;
+}
+.inn-det-flex .inn-det-date i {
+	position: absolute;
+	top: 50%;
+	right: 0.1rem;
+	margin-top: -0.06rem;
+	display: block;
+  	width: .1rem;
+  	height: .1rem;
+  	border-color: #fff; 
+}
+
+.room-list {
+	margin: 0.2rem 0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 0 0.15rem;
+}
+.room-item {
+	position: relative;
+	padding: 0.15rem 0;
+	border-bottom: 1px solid #ccc;
+}
+.room-item:last-child {
+	border-bottom: none;
+}
+
+.room-item h3 {
+	color: #003580;
+	line-height: 0.3rem;
+}
+.room-item p.room-descript {
+	color: #999;
+	font-size: 0.1rem;
+	line-height: 0.2rem;
+}
+.room-item .inn-price {
+	top: 0.15rem;
+	right: 0.65rem;
+	position: absolute;
+	line-height: 0.5rem;
+	color: #fc5810;
+}
+.room-item .inn-btn {
+	position: absolute;
+	top: 0.15rem;
+	right: 0;
+	height: 0.5rem;
+	padding: 0 0.15rem;
+	line-height: 0.5rem;
+}
+.room-item .room-detail {
+	display: none;
+	position: relative;
+	padding: 0.1rem 0;
+	margin-top: 0.15rem;
+	border-top: 1px dotted #ccc;
+}
+.room-item .room-detail img {
+	width: 100%;
+	height: auto;
+}
+.room-item .room-detail p {
+	font-size: 0.1rem;
+	line-height: 2;
+}
+.room-item .room-detail i {
+	position: absolute;
+	bottom: -0.1rem;
+	right: 50%;
+	margin-right: -0.05rem;
+	display: block;
+  	width: .1rem;
+  	height: .1rem;
+  	border-color: #ccc; 
+}
+.hotel-detail {
+	padding: 0.15rem;
+}
+.hotel-detail h3 {
+	color: #003580;
+	font-weight: bold;
+	margin-bottom: 0.1rem;
+}
+.hotel-detail p {
+	font-size:0.1rem;
+	line-height: 2;
+	color: #666;
+}
+
+.order-info {
+	padding: 0.15rem;
+}
+.order-info h2 {
+	color: #003580;
+	line-height: 2;
+}
+.order-info p,
+.order-info address {
+	font-size: 0.14rem;
+	line-height: 2;
+	color: #666;
+}
+.order-fill {
+	border-top: 1px dotted #ccc;
+}
+.order-tips {
+	margin-bottom: 0.1rem; 
+}
+.order-tips p {
+	color: #666;
+	line-height: 2;
+	font-size: 0.14rem;
+}
+.price {
+	color: #fc5810;
+	font-size: 0.16rem;
+	font-weight: bold;
+}
+.login-tips {
+	background: #f4f4f4;
+	padding: 0.1rem 0.15rem;
+	line-height: 0.3rem;
+	border-bottom: 1px solid #ccc;
+}
+.login-tips .inn-btn {
+	padding: 0 0.15rem;
+	background: #f9f9f9;
+	color: #fc5810;
+}
+.order-success {
+	padding: 0.2rem 0.15rem;
+}
+.order-success p {
+	color: #666;
+	line-height: 2;
+	font-size: 0.12rem;
+}
+.order-success p.success-info {
+	color: #000;
+	font-size: 0.16rem;
+	font-weight: bold;
+	margin-bottom: 0.2rem;
+}
+
+.order-success .inn-btn {
+	padding: 0 0.15rem;
+	background: #fff;
+	color: #fc5810;
+}
+
+.order-title {
+	background: #f4f4f4;
+}
+.order-sts {
+	display: inline-block;
+	font-weight: bold;
+}
+.sts-o {
+	color: #fc5810;
+}
+.sts-g {
+	color: #58fc10;
+}
+.sts-b {
+	color: #000;
+}
+
+.login-helper {
+	margin-top: 0.2rem;
+	overflow: hidden;
+}
+.login-helper .pwdlink {
+	line-height: 0.36rem;
+	color: #003580;
+}
+.login-helper .inn-btn {
+	width: 50%;
+	line-height: 0.36rem;
+	background: #f9f9f9;
+	color: #fc5810;
+}
+
+
