@@ -69,7 +69,7 @@ tr:hover > td {
 }
 .pageContentWrapper {
 	background-color: #fff;
-    padding:55px 24px;
+	padding:55px 24px;
 }
 .pageWrapper > *:last-child, .pageContentWrapper > *:last-child {
 	margin-bottom: 0px;
@@ -80,16 +80,16 @@ tr:hover > td {
 	padding:10px 22px;
 }
 ::-webkit-input-placeholder {
-color:#999;
+	color:#999;
 }
 :-moz-placeholder {
- color:#999;
+	color:#999;
 }
 ::-moz-placeholder {
- color:#999;
+	color:#999;
 }
 :-ms-input-placeholder {
- color:#999;
+	color:#999;
 }
 .formFieldWrapper {
 	margin-bottom: 23px;
@@ -169,7 +169,6 @@ input.fieldWithIcon {
 	text-decoration: none;
 }
 .mainMenuOuterWrapper {
-	display: none;
 	z-index: 9999;
 	background-color: #0288D1;
 }
@@ -368,18 +367,18 @@ input.loginPasswordField {
 	text-align: center;
 }
 input.loginButton {
-	    height: 45px;
-    background-color: #03A9F4;
-    text-decoration: none;
-    line-height: 45px;
-    margin-bottom: 37px;
-    padding-left: 12px;
-    padding-right: 12px;
-    border-radius: 6px;
-    width: 100%;
-    color: #fff;
-    font-size: 16px;
-    font-family: "微软雅黑";
+	height: 45px;
+	background-color: #03A9F4;
+	text-decoration: none;
+	line-height: 45px;
+	margin-bottom: 37px;
+	padding-left: 12px;
+	padding-right: 12px;
+	border-radius: 6px;
+	width: 100%;
+	color: #fff;
+	font-size: 16px;
+	font-family: "微软雅黑";
 }
 .loginRegisterButton {
 	float: left;
@@ -503,14 +502,14 @@ input.recoverButton {
 	margin-right: auto;
 }
 .footerWrapper {
-	/*padding-left: 24px;
-	padding-right: 24px;*/
-	background-color: #03A9F4;
-	height: 54px;
-        position: fixed;
-        z-index: 9999;
-        bottom: 0;
-        width: 100%;
+/*padding-left: 24px;
+padding-right: 24px;*/
+background-color: #03A9F4;
+height: 54px;
+position: fixed;
+z-index: 9999;
+bottom: 0;
+width: 100%;
 }
 .footerWrapper a {
 	color: #fff;
@@ -539,15 +538,15 @@ input.recoverButton {
 	border: none;
 }
 .list {
-    border: 1px solid #ccc;
+	border: 1px solid #ccc;
 	padding:0 10px;
 	font-size:14px;
 	font-family:"微软雅黑";
 	margin: 20px 0;
 }
 .list_one {
-    height: 50px;
-    line-height: 50px;
+	height: 50px;
+	line-height: 50px;
 	border-bottom: 1px dashed #ccc;
 }
 .list_two {
@@ -555,44 +554,44 @@ input.recoverButton {
 }
 .list_two ul{
 	list-style:none;
-	}
+}
 .list_two ul li{
 	width:50%;
 	float:left;
 	height:35px;
 	line-height:35px;
-	}	
+}	
 .list_two1 {
 	border-bottom: 1px dashed #ccc;
 }
 .list_two1 ul{
 	list-style:none;
-	}
+}
 .list_two1 ul li{
 	width:100%;
 	float:left;
 	height:35px;
 	line-height:35px;
-	}		
+}		
 
 .list_three {
-    height: 40px;
-    line-height: 40px;
+	height: 40px;
+	line-height: 40px;
 	color:#b4b4b4;
 }
 .conre_switch { 
-    width: 100%;
+	width: 100%;
 	overflow: hidden;
 	float:left;
-	}
+}
 .conre_switch a.curren{
 	background: #FFF;
-    width: 49%;
-    border: 1px solid #f1f1f1;
-    color: #03A9F4;
-    font-weight: bold;
-    line-height: 43px;
-	}
+	width: 49%;
+	border: 1px solid #f1f1f1;
+	color: #03A9F4;
+	font-weight: bold;
+	line-height: 43px;
+}
 .conre_switch a {
 	display: block;
 	float: left;
@@ -604,17 +603,16 @@ input.recoverButton {
 	line-height: 45px; 
 	background:#f1f1f1; 
 	color:#333;
-	}
+}
 .Notic_body {
 	width: 100%;
-    overflow: hidden;
-    background:#FFF;
+	overflow: hidden;
+	background:#FFF;
 	margin-top: 55px;
-	}
+}
 .hide { 
-    display:none !important;
-	}
+	display:none !important;
+}
 .conre_switch a.curren:hover{
 	outline: none; 
-	}
-	
+}

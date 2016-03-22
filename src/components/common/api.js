@@ -1,3 +1,5 @@
+import cookieutil from './cookieutil'
+
 function wrapData(d){
 	var result={};
 	result.token="xxxxxx",
@@ -149,6 +151,22 @@ export default{
 	roomorder(d,cb){
 		setTimeout(function(){
 			cb(require('./data/roomOrderInfo'));
+		},500);
+	},
+	login(d,cb){
+		setTimeout(function(){
+			cookieutil.cookie('token', 'aaaaa', { expires: 90 });
+			cb();
+		},1000);
+	},
+	mychannel(d,cb){
+		setTimeout(function(){
+			cb(require('./data/mychannel'));
+		},500);
+	},
+	myorders(d,cb){								//分销商的分销统计
+		setTimeout(function(){
+			cb(require('./data/myorders'));
 		},500);
 	}
 	
