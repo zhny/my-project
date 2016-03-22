@@ -21,7 +21,7 @@
               </div>
           </div>
           <div class="submit">
-              <button type="submit" id="submit" class="inn-btn inn-btn-packed" onclick="document.location.href='inn.html'">预订房间</button>
+              <button type="submit" id="submit" class="inn-btn inn-btn-packed" @click="book('hoo')">预订房间</button>
           </div>
       </div>
   </div>
@@ -95,13 +95,10 @@
 
 <script>
 export default {
-  data () {
-    return {
-      pageTitle:'翰林客栈',
-    }
-  },
   methods:{
-    isurl:require('../common/isurl')
+    book (hotelId) {
+      this.$router.go({path:'/inn',query:{"hotelId":hotelId}});
+    },
   }
 }
 </script>

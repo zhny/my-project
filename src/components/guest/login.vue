@@ -15,7 +15,7 @@
           <div class="submit">
               <button type="submit" id="submit" class="inn-btn inn-btn-packed" onclick="document.location.href='index.html'">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
           </div>
-          <div class="login-helper"><a href="pwd-change.html" class="fl pwdlink">忘记密码？</a><a href="registor.html" class="fr inn-btn reg-btn">立即注册</a></div>
+          <div class="login-helper"><a href="pwd-change.html" class="fl pwdlink">忘记密码？</a><a v-link="{ path: '/registor' }"  class="fr inn-btn reg-btn">立即注册</a></div>
       </div>
   </div>
 </div>
@@ -23,11 +23,6 @@
 
 <script>
 export default {
-  data () {
-    return {
-      pageTitle:'用户注册' , 
-    }
-  },
   methods:{
     isurl:require('../common/isurl')
   }

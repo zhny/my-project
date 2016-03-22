@@ -12,7 +12,7 @@
 <script>
 export default {
 	methods: {
-	isurl:require('./components/common/isurl')
-	}
+		isurl:require('./components/common/isurl')
+	},
 }
 </script>

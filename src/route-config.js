@@ -6,5 +6,11 @@ export function configRouter (router) {
     '/login': {
         component: require('./components/guest/login.vue')
     },
+    '/registor': {
+        component: require('./components/guest/registor.vue')
+    },
+    '/inn': {
+        component: require('./components/guest/inn.vue')
+    },
   })
 }
