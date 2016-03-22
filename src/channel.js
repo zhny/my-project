@@ -1,4 +1,6 @@
 import './components/common/jquery'
+import './assets/channel/css/framework'
+import './assets/channel/css/style'
 import Vue from 'vue'
 import ChannelApp from './ChannelApp'
 import VueRouter from 'vue-router'
@@ -18,9 +20,9 @@ const router = new VueRouter({
 })
 
 configRouter(router)
-// router.redirect({
-//   '/': '/hotel/roomstatus'
-// })
+router.redirect({
+  '/': '/index'
+});
 router.start(ChannelApp, '#app')
 
 // just for debugging
