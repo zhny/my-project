@@ -361,6 +361,16 @@ input.loginPasswordField {
 	height: 36px;
 	margin-bottom: 0px;
 }
+
+input.resetButton{
+	float:left;
+	height: 36px;
+	text-decoration: none;
+	background-color: #aabbcc;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
 .loginButtonsWrapper {
 	height: 36px;
 	padding-top: 4px;

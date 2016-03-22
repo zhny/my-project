@@ -552,7 +552,7 @@ table {
 }
 
 .cov-date-monthly {
-  height: 150px;
+  height: 50px;
 }
 
 .cov-date-monthly > div {
@@ -561,7 +561,7 @@ table {
   margin: 0;
   vertical-align: middle;
   color: #fff;
-  height: 150px;
+  height: 50px;
   float: left;
   text-align: center;
   cursor: pointer;
@@ -578,7 +578,7 @@ table {
 
 .cov-date-caption {
   width: 60%;
-  padding: 50px 0!important;
+  padding: 10px 0!important;
   box-sizing: border-box;
   font-size: 24px;
 }
@@ -748,6 +748,7 @@ table {
   <div class="cov-vue-date">
     <div class="datepickbox">
       <input 
+      readonly="readonly"
       type="text" 
       title="input date" 
       class="cov-datepicker" 

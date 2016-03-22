@@ -2,14 +2,17 @@
 	<div class="websiteWrapper">
 		<div class="mainMenuOuterWrapper" v-show="showMainMenu" transition="fade">
 			<ul class="mainMenuWrapper">
-				<li><a href="javascript:;"  v-link="{ path: '/login' }" @click="showMainMenu=false">Login</a></li>
-				<li class="currentPage"><a href="javascript:;" v-link="{ path: '/index' }" @click="showMainMenu=false">首页</a></li>
-				<li><a href="javascript:;"  v-link="{ path: '/report' }" @click="showMainMenu=false">分销报表</a></li>
+				<li :class="{currentPage:isurl('/login')}"><a href="javascript:;"  v-link="{ path: '/login' }" @click="showMainMenu=false">切换账号</a></li>
+				<li :class="{currentPage:isurl('/index')}"><a href="javascript:;" v-link="{ path: '/index' }" @click="showMainMenu=false">首页</a></li>
+				<li :class="{currentPage:isurl('/report')}"><a href="javascript:;"  v-link="{ path: '/report' }" @click="showMainMenu=false">分销报表</a></li>
 			</ul>
 			<div class="mainMenuBottomDecoration"></div>
 		</div>
 		<div class="headerOuterWrapper">
-			<div class="headerWrapper"> <a class="accountButton" href=""></a><a class="shoppingCartButton" href="">{{title}}</a><a class="mainMenuButton" href="javascript:;" @click="showMainMenu=!showMainMenu"></a></div>
+			<div class="headerWrapper"> 
+				<a class="accountButton" href="javascript:;" v-link="{ path: '/index' }"></a>
+				<a class="shoppingCartButton" href="javascript:;">{{title}}</a>
+				<a class="mainMenuButton" href="javascript:;" @click="showMainMenu=!showMainMenu"></a></div>
 		</div>
 		<router-view></router-view>
 		<channel-footer></channel-footer>
@@ -23,6 +26,9 @@ export default {
 	components:{
 		channelFooter
 	},
+	methods: {
+    	isurl:require('./components/common/isurl')
+  	},
 	data (){
 		return {
 			showMainMenu:false
@@ -53,6 +59,10 @@ export default {
 			var path=this.$route.path;
 			if(path.indexOf("/index")>=0){
 				return "客栈股东";	
+			}else if(path.indexOf("/login")>=0){
+				return "登录";
+			}else if(path.indexOf("/report")>=0){
+				return "分销报表";
 			}
 			return "";
 		}

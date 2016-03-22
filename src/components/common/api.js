@@ -168,6 +168,16 @@ export default{
 		setTimeout(function(){
 			cb(require('./data/myorders'));
 		},500);
-	}
+	},
+	getSmsVali(d,cb){								//获取手机验证码
+		setTimeout(function(){
+			cb();
+		},500);
+	},
+	resetpassword(d,cb){								//重置密码
+		setTimeout(function(){
+			cb();
+		},500);
+	},
 	
 }
