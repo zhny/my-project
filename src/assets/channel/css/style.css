@@ -1,0 +1,628 @@
+﻿body {
+	background-color: #fff;
+	font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+p > a {
+	color: #333;
+}
+a {
+	padding:0; text-decoration:none;vertical-align:baseline; color:#333; 
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: '微软雅黑', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+}
+a:link, a:visited, a:hover, a: active { outline: none; }
+input[type="text"], input[type="password"] {
+	background-color: #f3f3f3;
+	border-color: #f0f0f0;
+	transition: background-color 0.3s;
+	-webkit-transition: background-color 0.3s;
+	-moz-transition: background-color 0.3s;
+	color: #999;
+	font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+textarea {
+	background-color: #f3f3f3;
+	border-color: #f0f0f0;
+	transition: background-color 0.3s;
+	-webkit-transition: background-color 0.3s;
+	-moz-transition: background-color 0.3s;
+	color: #999;
+	font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+input:focus, textarea:focus {
+	background-color: #f6f6f6;
+	transition: background-color 0.3s;
+	-webkit-transition: background-color 0.3s;
+	-moz-transition: background-color 0.3s;
+}
+input[type="submit"] {
+	font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+table {
+	background-color: transparent;
+	border-left: 1px solid #f0f0f0;
+	border-top: 1px solid #f0f0f0;
+}
+thead {
+}
+th {
+	border-bottom: 1px solid #f0f0f0;
+	border-right: 1px solid #f0f0f0;
+	color: #333;
+	background-color: #f0f0f0;
+}
+tr {
+	line-height: 18px;
+}
+td {
+	border-right: 1px solid #f0f0f0;
+	border-bottom: 1px solid #f0f0f0;
+	color: #999;
+	background-color: transparent;
+}
+tr:hover > td {
+	background-color: #f6f6f6;
+}
+.websiteWrapper {
+}
+.pageContentWrapper {
+	background-color: #fff;
+	padding:55px 24px;
+}
+.pageWrapper > *:last-child, .pageContentWrapper > *:last-child {
+	margin-bottom: 0px;
+	margin-top:35px;
+}
+.pageTitle {
+	border-bottom: 3px solid #f0f0f0;
+	padding:10px 22px;
+}
+::-webkit-input-placeholder {
+	color:#999;
+}
+:-moz-placeholder {
+	color:#999;
+}
+::-moz-placeholder {
+	color:#999;
+}
+:-ms-input-placeholder {
+	color:#999;
+}
+.formFieldWrapper {
+	margin-bottom: 23px;
+}
+.formFieldWrapper label, .formTextareaWrapper label {
+	margin-bottom: 13px;
+	width: 100%;
+	box-sizing: border-box;
+	height: 18px;
+	line-height: 18px;
+	font-family: "微软雅黑";
+}
+input.fieldWithIcon {
+	background-position: right center;
+	background-repeat: no-repeat;
+	padding-right: 40px;
+}
+.textareaWithIcon {
+	background-position: right 9px;
+	background-repeat: no-repeat;
+	padding-right: 40px;
+}
+.shopSearchFieldIcon {
+	background-image: url(../images/shopSearchFieldBg.png);
+}
+.userFieldIcon {
+	background-image: url(../images/userFieldBg.png);
+}
+.passwordFieldIcon {
+	background-image: url(../images/passwordFieldBg.png);
+}
+.emailFieldIcon {
+	background-image: url(../images/emailFieldBg.png);
+}
+.phoneFieldIcon {
+	background-image: url(../images/phoneFieldBg.png);
+}
+.headerOuterWrapper {
+	position: fixed;
+	width: 100%;
+	z-index: 9999;
+	background-color: #fff;
+}
+.headerWrapper {
+	padding-left: 24px;
+	padding-right: 24px;
+	z-index: 9990;
+	height: 54px;
+	background-color: #03A9F4;
+}
+.accountButton {
+	float: left;
+	height: 18px;
+	width: 18px;
+	background: url(../images/accountButtonBg.png) 0 0 no-repeat;
+	margin-top: 18px;
+}
+.shoppingCartButton {
+	height: 20px;
+	line-height: 20px;
+	margin-top: 18px;
+	font-size: 20px;
+	color: #fff;
+	font-family: "微软雅黑";
+	width: 88.5%;
+	display: block;
+	text-align: center;
+}
+.mainMenuButton {
+	height: 18px;
+	width: 24px;
+	background: url(../images/mainMenuButtonBg.png) 0px 0px no-repeat;
+	float: right;
+	margin-top: -18px;
+}
+.mainMenuButton:hover {
+	text-decoration: none;
+}
+.mainMenuOuterWrapper {
+	z-index: 9999;
+	background-color: #0288D1;
+}
+.mainMenuBottomDecoration {
+	margin-right: 24px;
+	margin-left: 24px;
+	height: 3px;
+	background-color: rgba(0,0,0,0.12);
+}
+.mainMenuWrapper {
+	padding-left: 24px;
+	padding-right: 24px;
+	margin: 0px;
+	position: relative;
+	padding-top: 24px;
+	padding-bottom: 12px;
+}
+.mainMenuWrapper > li {
+	line-height: 36px;
+	height: 36px;
+	margin-bottom: 12px;
+	list-style: none;
+	background-color: #fff;
+	border-radius: 6px;
+	padding-left: 12px;
+}
+.mainMenuWrapper > li:last-child {
+	margin-bottom: 12px;
+}
+.mainMenuWrapper > li > a {
+	color: #666;
+}
+.mainMenuWrapper > li > a:hover {
+	text-decoration: none;
+}
+.mainMenuWrapper > li:hover > a {
+}
+.mainMenuWrapper > li.currentPage {
+	background-color: #333;
+}
+.mainMenuWrapper > li.currentPage > a {
+	color: #fff;
+}
+.mainLogo1 {
+	width: 104px;
+	height: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:35px;
+}
+.mainLogo1 > img {
+	width: 104px;
+	height: 30px;
+}
+.headerDecoration {
+	height: 6px;
+	background-color: #fff;
+}
+.mainLogo {
+	width: 100px;
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+}
+.mainLogo > img {
+	width: 100px;
+	height: 100px;
+}
+.shopSearchFormWrapper {
+	padding: 20px 0 0 0;
+}
+.shopSearchForm {
+}
+input.shopSearchField {
+	background-color: #f3f3f3;
+	color: #333;
+	width: 100%;
+	box-sizing: border-box;
+	height: 36px;
+	font-family: "微软雅黑";
+}
+input.shopSearchField:focus {
+	background-color: #f6f6f6;
+}
+.homePageWrapper {
+}
+.sectionTitleLink {
+	float: right;
+	font-size: 10px;
+	color: #e4755a;
+}
+.homeProductWrapper:nth-child(odd) {
+	margin-left: -36px;
+}
+.homeProductWrapper > img {
+	width: 100%;
+	height: auto;
+}
+.homeProductInfoWrapper {
+	padding-left: 12px;
+	padding-right: 12px;
+	background-color: #f9f9f9;
+	padding-bottom: 12px;
+	padding-top: 8px;
+}
+.homeProductTitle {
+	display: block;
+	margin-bottom: 7px;
+	text-align: center;
+}
+.homePurchaseButton {
+	background-color: #333;
+	color: #fff;
+	border-radius: 3px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	text-decoration: none;
+}
+#cboxOverlay {
+	background: #fff;
+}
+#cboxOverlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+#colorbox, #cboxOverlay, #cboxWrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	overflow: hidden;
+}
+#colorbox, #cboxContent, #cboxLoadedContent {
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+}
+.highlight {
+	color: #333;
+	display: inline;
+	margin-right: 10px;
+}
+.highright {
+	float: right;
+}
+.textBreakBoth {
+	height: 4px;
+	clear: both;
+	margin-bottom: 23px;
+	border-bottom: 3px solid #f0f0f0;
+}
+.accordionItemWrapper {
+	margin-bottom: 24px;
+}
+.currentAccordion {
+	background-color: #f0f0f0;
+	padding-left: 6px;
+	font-size: 12px;
+	height: 36px;
+	line-height: 36px;
+	color: #666;
+}
+.accordionButtonIcon {
+	margin-left: 10px;
+	float: left;
+}
+.accordionButtonTitle {
+	margin-right: 10px;
+	float: right;
+}
+.loginPageWrapper {
+}
+.loginFormWrapper {
+	margin-bottom: 36px;
+}
+.loginForm {
+}
+input.loginNameField {
+	width: 100%;
+	box-sizing: border-box;
+	height: 36px;
+	margin-bottom: 0px;
+}
+input.loginPasswordField {
+	width: 100%;
+	box-sizing: border-box;
+	height: 36px;
+	margin-bottom: 0px;
+}
+
+input.resetButton{
+	float:left;
+	height: 36px;
+	text-decoration: none;
+	background-color: #aabbcc;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+.loginButtonsWrapper {
+	height: 36px;
+	padding-top: 4px;
+	text-align: center;
+}
+input.loginButton {
+	height: 45px;
+	background-color: #03A9F4;
+	text-decoration: none;
+	line-height: 45px;
+	margin-bottom: 37px;
+	padding-left: 12px;
+	padding-right: 12px;
+	border-radius: 6px;
+	width: 100%;
+	color: #fff;
+	font-size: 16px;
+	font-family: "微软雅黑";
+}
+.loginRegisterButton {
+	float: left;
+	margin-right: 12px;
+	padding-right: 12px;
+	border-right: 1px dotted #e9e9e9;
+	height: 36px;
+	line-height: 36px;
+	border-radius: 6px;
+}
+.loginRecoverButton {
+	height: 36px;
+	line-height: 36px;
+}
+.recoverPageWrapper {
+}
+.recoverFormWrapper {
+	margin-bottom: 36px;
+}
+.recoverForm {
+}
+input.recoverUserNameField {
+	width: 100%;
+	height: 36px;
+	box-sizing: border-box;
+	margin-bottom: 0px;
+}
+input.recoverEmailField {
+	width: 100%;
+	height: 36px;
+	box-sizing: border-box;
+	margin-bottom: 0px;
+}
+.recoverButtonsWrapper {
+	height: 36px;
+	padding-top: 4px;
+}
+input.recoverButton {
+	padding-left: 12px;
+	padding-right: 12px;
+	float: right;
+	height: 36px;
+	background-color: #333;
+	border-radius: 6px;
+}
+.recoverLoginButton {
+	float: left;
+	margin-right: 12px;
+	padding-right: 12px;
+	border-right: 1px dotted #e9e9e9;
+	height: 36px;
+	line-height: 36px;
+	border-radius: 6px;
+}
+.recoverRegisterButton {
+	float: left;
+	height: 36px;
+	line-height: 36px;
+}
+.portfolioOnePageWrapper {
+}
+.portfolioOneWrapper {
+	padding-left: 24px;
+	padding-right: 24px;
+	margin-left: 24px;
+	margin-right: 24px;
+	background-color: #fff;
+}
+.portfolioOneItemWrapper {
+
+	background-color: #fff;
+}
+.portfolioOneItemImageWrapper {
+}
+.portfolioOneItemImageWrapper:hover {
+}
+.portfolioOneItemImageWrapper img {
+	width: 100%;
+	height: auto;
+}
+.portfolioOneItemInfoWrapper {
+	background-color: #f9f9f9;
+	padding-top: 21px;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-bottom: 22px;
+}
+.portfolioOneItemInfoWrapper > *:last-child {
+	margin-bottom: 0px;
+}
+.portfolioOneItemTitle {
+	margin-bottom: 16px;
+	height: 18px;
+	padding-bottom: 0px;
+}
+.portfolioOneHoverDeco {
+}
+.portfolioOneExpandButton {
+	height: 100px;
+	width: 100px;
+	line-height: 36px;
+	color: #666;
+}
+.portfolioOneDetailsButton {
+	height: 36px;
+	line-height: 36px;
+	float: right;
+	padding-right: 40px;
+	color: #666;
+	padding-left: 12px;
+}
+.portfolioOneExpandButton:hover, .portfolioOneDetailsButton:hover {
+	text-decoration: none;
+}
+.portfolioOneItemButtonsWrapper {
+	height: 100px;
+	line-height: 36px;
+	margin-top: -130px;
+	width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.footerWrapper {
+/*padding-left: 24px;
+padding-right: 24px;*/
+background-color: #03A9F4;
+height: 54px;
+position: fixed;
+z-index: 9999;
+bottom: 0;
+width: 100%;
+}
+.footerWrapper a {
+	color: #fff;
+	margin-top: 18px;
+}
+.footerWrapper > .copyright {
+	color: #fff;
+	margin-top: 18px;
+	display: block;
+	text-align: center;
+}
+.footerLinksWrapper {
+	float: right;
+	display: block;
+	margin-top: 18px;
+}
+.footerLinksWrapper > .footerLink {
+	float: left;
+	margin-left: 12px;
+	padding-right: 9px;
+	margin-top: 0px;
+	border-right: 1px solid rgba(255,255,255,0.12);
+}
+.footerLinksWrapper > .footerLink:last-child {
+	padding-right: 0px;
+	border: none;
+}
+.list {
+	border: 1px solid #ccc;
+	padding:0 10px;
+	font-size:14px;
+	font-family:"微软雅黑";
+	margin: 20px 0;
+}
+.list_one {
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px dashed #ccc;
+}
+.list_two {
+	border-bottom: 1px dashed #ccc;
+}
+.list_two ul{
+	list-style:none;
+}
+.list_two ul li{
+	width:50%;
+	float:left;
+	height:35px;
+	line-height:35px;
+}	
+.list_two1 {
+	border-bottom: 1px dashed #ccc;
+}
+.list_two1 ul{
+	list-style:none;
+}
+.list_two1 ul li{
+	width:100%;
+	float:left;
+	height:35px;
+	line-height:35px;
+}		
+
+.list_three {
+	height: 40px;
+	line-height: 40px;
+	color:#b4b4b4;
+}
+.conre_switch { 
+	width: 100%;
+	overflow: hidden;
+	float:left;
+}
+.conre_switch a.curren{
+	background: #FFF;
+	width: 49%;
+	border: 1px solid #f1f1f1;
+	color: #03A9F4;
+	font-weight: bold;
+	line-height: 43px;
+}
+.conre_switch a {
+	display: block;
+	float: left;
+	width: 50%;
+	background:#FFF;
+	font-size: 16px; 
+	font-weight:bold;
+	text-align: center;
+	line-height: 45px; 
+	background:#f1f1f1; 
+	color:#333;
+}
+.Notic_body {
+	width: 100%;
+	overflow: hidden;
+	background:#FFF;
+	margin-top: 55px;
+}
+.hide { 
+	display:none !important;
+}
+.conre_switch a.curren:hover{
+	outline: none; 
+}
