@@ -1,6 +1,7 @@
 <template>
   	<header class="inn-header">
 	    <h2 class="title">翰林客栈{{pageTitle}}</h2>
+	    <a v-link="{ path: '/home' }" class="back-link"><i class="icon-ar icon-b"></i></a>
 	    <a v-link="{ path: '/login' }" class="login-link"></a>
 	</header>
 	<router-view transition-mode="out-in"></router-view>

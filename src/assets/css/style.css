@@ -379,6 +379,7 @@ body {
 }
 .inn-det-flex .inn-det-date {
 	position: relative;
+	padding-left: 0.5rem;
 	-moz-box-flex: 1;
 	-webkit-box-flex: 1;
 	-o-box-flex: 1;
@@ -399,6 +400,7 @@ body {
 .inn-det-flex .inn-det-date span {
 	position: absolute;
 	top: 0;
+	left: 0;
 	display: block;
 	width: 0.5rem;
 	height: 0.4rem;

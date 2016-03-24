@@ -179,5 +179,14 @@ export default{
 			cb();
 		},500);
 	},
-	
+
+	// 消费者
+	getHotel(d,cb){					//消费者获取客栈
+		setTimeout(function(){
+			cb(require('./data/hotel'))
+		},500);
+		// $.get('/vhotel/hotel/getHotels',wrapData(d),function(r){     //GET请求
+  //       	cb(handleResp(r);
+  //       }); 
+  	},
 }

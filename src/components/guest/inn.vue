@@ -3,56 +3,24 @@
     <div class="inn-main">
         <div class="inn-top">
             <ul class="switch-pics">
-                <li><img src="" alt=""></li>
+                <li><img :src="hotel.hotelFace" alt=""></li>
             </ul>
-            <h2>翰林壹号客栈</h2>
+            <h2>{{hotel.hotelName}}</h2>
         </div>
         <div class="inn-detail">
-            <address>丽江 古城区 文武街文明巷177号<span>map</span></address>
+            <address>{{hotel.hotelAdr}}<span>map</span></address>
         </div>
         <div class="inn-detail inn-det-flex">
-            <div class="inn-det-date"><span>入住：</span><input type="date" class="cont"><i class="icon-ar icon-d"></i></div>
+            <div class="inn-det-date"><span>入住：</span><mobile-date-pick :time.sync="checkIn"></mobile-date-pick><i class="icon-ar icon-d"></i></div>
             <div class="inn-det-dategap"> - </div>
-            <div class="inn-det-date"><span>离开：</span><input type="date" class="cont"><i class="icon-ar icon-d"></i></div>
+            <div class="inn-det-date"><span>离开：</span><mobile-date-pick :time.sync="checkOut"></mobile-date-pick><i class="icon-ar icon-d"></i></div>
         </div>
         <div class="room-list">
-            <div class="room-item">
-                <h3>房型名称</h3>
+            <div class="room-item" v-for="room in hotel.types">
+                <h3>{{room.typeName}}</h3>
                 <p class="room-descript">房间简要描述,限制在二十字以内</p>
-                <div class="inn-price">￥500</div>
-                <button class="inn-btn" onclick="document.location.href='order.html'">预定</button>
-                <div class="room-detail">
-                    <img src="" alt="">
-                    <p>房间面积：40-50平米</p>
-                    <p>楼层：1-2层</p>
-                    <p>床型：双人床，1.8米</p>
-                    <p>最多入住人数：2人</p>
-                    <p>早餐：无</p>
-                    <p>入住前订单可以取消</p>
-                    <i class="icon-ar icon-u"></i>
-                </div>
-            </div>
-            <div class="room-item">
-                <h3>房型名称</h3>
-                <p class="room-descript">房间简要描述,限制在二十字以内</p>
-                <div class="inn-price">￥500</div>
-                <button class="inn-btn" onclick="document.location.href='order.html'">预定</button>
-                <div class="room-detail">
-                    <img src="" alt="">
-                    <p>房间面积：40-50平米</p>
-                    <p>楼层：1-2层</p>
-                    <p>床型：双人床，1.8米</p>
-                    <p>最多入住人数：2人</p>
-                    <p>早餐：无</p>
-                    <p>入住前订单可以取消</p>
-                    <i class="icon-ar icon-u"></i>
-                </div>
-            </div>
-            <div class="room-item">
-                <h3>房型名称</h3>
-                <p class="room-descript">房间简要描述,限制在二十字以内</p>
-                <div class="inn-price">￥500</div>
-                <button class="inn-btn" onclick="document.location.href='order.html'">预定</button>
+                <div class="inn-price">{{room.rooms[0].price}}</div>
+                <button class="inn-btn" @click="orderGen(room.typeId)">预定</button>
                 <div class="room-detail">
                     <img src="" alt="">
                     <p>房间面积：40-50平米</p>
@@ -88,24 +56,41 @@
 </template>
 
 <script>
+import mobileDatePick from '../common/mobileDatePick'
+import api from '../common/api'
+
 export default {
+  components:{
+    mobileDatePick
+  },
   data () {
     return {
-        hotels:[],
-        detail:{}
+        hotel:{},
+        checkIn:'',
+        checkOut:'',
     }
   },
   route:{
     data({to}) {
       return {
-        detail:{
-            hotelId:to.query.hotelId
-        }
+        hotel:{
+            hotelId:to.query.orderHotelId,
+        },
+        checkIn:to.query.orderCheckIn,
+        checkOut:to.query.orderCheckOut,
       }
     }
   },
   ready () {
-    alert(this.detail.hotelId);
+    var $this=this;
+    api.getHotel($this.hotel.hotelId,function(r){
+      $this.hotel=r;
+    });
   },
+  methods:{
+    orderGen(roomType){
+        alert("预定房型："+roomType);
+    },
+  }
 }
 </script>
