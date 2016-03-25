@@ -12,5 +12,8 @@ export function configRouter (router) {
     '/inn': {
         component: require('./components/guest/inn.vue')
     },
+    '/orderfill': {
+        component: require('./components/guest/orderfill.vue')
+    },
   })
 }

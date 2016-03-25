@@ -3,10 +3,36 @@ module.exports={
     hotelName:"翰林院",
     hotelAdr:"丽江 古城区 文武街文明巷177号",
     hotelFace: "http://img4.cache.netease.com/photo/0008/2016-03-23/BISMQR4K2O3E0008.550x.0.jpg",
+    hotelInfo:"丽江古城老龙门客栈,地处丽江古城中心区域,一进两大院。原生态的纳西庭院,古色古香,原汁原味,环境幽美,闹中取静,丽江古城口碑客栈。",
+    hotelSurround:"客栈周边介绍文字，字数不限丽江古城老龙门客栈,地处丽江古城中心区域,一进两大院。原生态的纳西庭院,古色古香,原汁原味,环境幽美,闹中取静,丽江古城口碑客栈。",
     types:[
       {
         typeId:"1",
         typeName:"套房yoyo",
+        typeBrief:"双床不带早餐",
+        typeFace:"http://img3.cache.netease.com/photo/0005/2016-03-24/BIUVJE4R00C90005.jpg",
+        typeDetails:[
+          {
+            detailTag:"房间面积",
+            detailCont:"40-50平米",
+          },
+          {
+            detailTag:"楼层",
+            detailCont:"4-6层",
+          },
+          {
+            detailTag:"床型",
+            detailCont:"双床，1.5米",
+          },
+          {
+            detailTag:"最多入住人数",
+            detailCont:"2人",
+          },
+          {
+            detailTag:"早餐",
+            detailCont:"无",
+          },
+        ],
         rooms:[
           {
             "roomId":"1",
@@ -23,6 +49,30 @@ module.exports={
       {
         typeId:"2",
         typeName:"花园房",
+        typeBrief:"单人大床不带早餐",
+        typeFace:"http://img3.cache.netease.com/photo/0005/2016-03-24/BIUVJTT700C90005.jpg",
+        typeDetails:[
+          {
+            detailTag:"房间面积",
+            detailCont:"40-50平米",
+          },
+          {
+            detailTag:"楼层",
+            detailCont:"4-6层",
+          },
+          {
+            detailTag:"床型",
+            detailCont:"大床，1.8米",
+          },
+          {
+            detailTag:"最多入住人数",
+            detailCont:"2人",
+          },
+          {
+            detailTag:"早餐",
+            detailCont:"无",
+          },
+        ],
         rooms:[
           {
             "roomId":"4",
@@ -41,5 +91,9 @@ module.exports={
         "serveName":"免费WIFI",
         "serveCode":"wifi"
       },
+    ],
+    terms:[
+      "入住时间：14:00以后 离店时间：12:00以前",
+      "不可携带宠物。",
     ],
 }
