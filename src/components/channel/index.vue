@@ -1,12 +1,7 @@
 <template>
 	<div class="pageContentWrapper">
 		<div class="shopSearchFormWrapper">
-			<a href="" class="mainLogo">
-				<img src="../../assets/channel/images/eptonic.jpg" alt="">
-			</a> 
-			<div class="portfolioOneItemButtonsWrapper">
-				<a class="portfolioOneExpandButton" href="../../assets/channel/images/eptonic.jpg"></a>
-			</div>
+			<div id="qrcode" style="margin: 0 auto;width:128px;" @click="showLarge=true"></div>
 		</div>
 		<div class="accordionWrapper">
 			<div class="accordionItemWrapper">
@@ -42,18 +37,53 @@
 			<div class="accordionItemWrapper">
 				<a class=" currentAccordion" href="">
 					<span class="accordionButtonIcon">链接：</span>
-					<span class="accordionButtonTitle">www.baidu.com</span>
+					<span class="accordionButtonTitle">{{info.rebateUrl}}</span>
 				</a>
 			</div>
 		</div>
 	</div>
+	<div class="large-qrcode-bg" v-show="showLarge" @click="showLarge=false">
+		<div class="large-qrcode" id="large_qrcode"></div>
+	</div>
 </template>
+
+<style>
+.large-qrcode-bg{
+	background: rgba(255, 255, 255, 1) none repeat scroll 0% 0%;
+	animation: 0.5s ease 0s normal none 1 running fadein;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 998;
+}
+.large-qrcode{
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    display: block;
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: 400;
+    left: 50%;
+    max-width: 100%;
+    width:256px;
+    /*overflow: hidden;*/
+    /*position: fixed;*/
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+</style>
+
 <script>
 import api from '../common/api'
+import '../common/jquery.qrcode'
 
 export default{
 	data () {
 		return {
+			showLarge:false,
 			info:{
 
 			}	
@@ -63,6 +93,8 @@ export default{
 		var $this=this;
 		api.mychannel({},function(r){			//加载分销信息
 			$this.info=r;
+			$('#qrcode').qrcode({width: 128,height: 128,text: $this.info.rebateUrl});
+			$('#large_qrcode').qrcode({width: 256,height: 256,text: $this.info.rebateUrl});
 		});
 	}
 }
