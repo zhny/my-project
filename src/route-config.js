@@ -15,5 +15,11 @@ export function configRouter (router) {
     '/orderfill': {
         component: require('./components/guest/orderfill.vue')
     },
+    '/questFb': {
+        component: require('./components/guest/questFb.vue')
+    },
+    '/orderView': {
+        component: require('./components/guest/orderView.vue')
+    },
   })
 }

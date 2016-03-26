@@ -5,17 +5,17 @@
           <div class="search-list">
               <div class="search-item">
                   <span class="mark">用&nbsp;&nbsp;户&nbsp;&nbsp;名</span>
-                  <input type="text" class="cont" placeholder="手机号/电子邮箱">
+                  <input type="text" class="cont" placeholder="手机号/电子邮箱" v-model="loginQuest.account">
               </div>
               <div class="search-item">
                   <span class="mark">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</span>
-                  <input type="password" class="cont">
+                  <input type="password" class="cont" placeholder="输入密码" v-model="loginQuest.pwd">
               </div>
           </div>
           <div class="submit">
-              <button type="submit" id="submit" class="inn-btn inn-btn-packed" onclick="document.location.href='index.html'">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+              <button type="submit" id="submit" class="inn-btn inn-btn-packed" @click="login">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
           </div>
-          <div class="login-helper"><a href="pwd-change.html" class="fl pwdlink">忘记密码？</a><a v-link="{ path: '/registor' }"  class="fr inn-btn reg-btn">立即注册</a></div>
+          <div class="login-helper"><a v-link="{ path: '/reset' }" class="fl pwdlink">忘记密码？</a><a v-link="{ path: '/registor' }"  class="fr inn-btn reg-btn">立即注册</a></div>
       </div>
   </div>
 </div>
@@ -23,8 +23,18 @@
 
 <script>
 export default {
+  data () {
+    return {
+        loginQuest:{
+          account:'',
+          pwd:'',
+        },
+    }
+  },
   methods:{
-    isurl:require('../common/isurl')
-  }
+    login(){
+      alert(this.loginQuest.pwd); 
+    }
+  },
 }
 </script>
