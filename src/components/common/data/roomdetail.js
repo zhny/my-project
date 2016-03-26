@@ -7,5 +7,6 @@ module.exports={
   	typeName:'花园套房',
   	price:'998',
   	imgs:'imgul',
-  	facilities:'wifi'
+  	facilities:'wifi',
+  	available:6,
 }

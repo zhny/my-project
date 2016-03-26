@@ -15,27 +15,18 @@
                 <div id="room-num" class="search-item">
                     <span class="mark">房&nbsp;&nbsp;间&nbsp;&nbsp;数</span>
                     <select class="cont" v-model="number">
-                        <option selected>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
+                        <option value="1" v-for="i in roomdetail.available" :value="i">{{i}}间</option>
                     </select>
                 </div>
                 <div class="visitors">
-                    <div class="search-item">
+                    <div v-for="n in number" class="search-item">
                         <span class="mark">入&nbsp;&nbsp;住&nbsp;&nbsp;人</span>
-                        <input class="cont order-ipt" placeholder="请填写入住人姓名">
+                        <input class="cont order-ipt" placeholder="请填写第{{n}}个入住人姓名">
                     </div> 
                 </div>
                 <div class="search-item">
                     <span class="mark">联系方式</span>
-                    <input class="cont order-ipt" placeholder="请填写入住人手机号码">
+                    <input class="cont order-ipt" placeholder="请填写联系人手机号码">
                 </div>
             </div>
             <div class="order-tips">
@@ -65,7 +56,7 @@ export default {
             checkOut:'',
         },
         roomdetail:{},
-        number:'',
+        number:1,
     }
   },
   route:{
