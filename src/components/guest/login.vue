@@ -14,7 +14,7 @@
               <p class="errmsg">{{errMsg}}</p>
           </div>
           <div class="submit">
-              <button type="submit" id="submit" class="inn-btn inn-btn-packed" @click="login">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+              <button type="submit" class="inn-btn inn-btn-packed" @click="login">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
           </div>
           <div class="login-helper"><a v-link="{ path: '/reset' }" class="fl pwdlink">忘记密码？</a><a v-link="{ path: '/registor' }"  class="fr inn-btn reg-btn">立即注册</a></div>
       </div>
