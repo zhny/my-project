@@ -189,4 +189,14 @@ export default{
   //       	cb(handleResp(r);
   //       }); 
   	},
+  	getAccount(d,cb){
+		setTimeout(function(){
+			cb(require('./data/account'));
+		},500);
+	},
+	getOrders(d,cb){					//获取订单列表
+		setTimeout(function(){
+			cb(require('./data/orders'));
+		},500);
+	},
 }

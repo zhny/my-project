@@ -200,7 +200,15 @@ body {
 	height: 0.5rem;
 	line-height: 0.5rem;
 }
-.search-item .mark {
+.account-item {
+	position: relative;
+	padding-left: 0.7rem;
+	padding-right: 0.36rem;
+	height: 0.5rem;
+	line-height: 0.5rem;
+}
+.search-item .mark,
+.account-item .mark {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -208,7 +216,8 @@ body {
     width: 0.7rem;
     color: #999;
 }
-.search-item .cont {
+.search-item .cont,
+.account-item .cont {
     background-image: -webkit-linear-gradient(#ccc, #ccc);
     background-image: -ms-linear-gradient(#ccc, #ccc);
     background-image: -moz-linear-gradient(#ccc, #ccc);
@@ -218,19 +227,23 @@ body {
     background-repeat: no-repeat;
     background-position: center 0.42rem;
 }
-.search-list .search-item .cont {
+.search-list .search-item .cont,
+.search-list .account-item .cont {
 	display: block;
 	width: 100%;
 	height: 0.5rem;
     padding-left: 0.1rem;
 }
-.search-list .search-item span.cont{
+.search-list .search-item span.cont,
+.search-list .account-item span.cont {
 	line-height: 0.5rem;
 }
-.search-list .search-item input.cont{
+.search-list .search-item input.cont,
+.search-list .account-item input.cont {
 	line-height: normal;
 }
 .search-item input,
+.account-item input,
 .search-item select {
 	border: none;
 	outline: none;
@@ -593,4 +606,46 @@ p.errmsg {
 	margin-top: 10px;
 	font-size: 0.12rem;
 	color: red;
+}
+
+.account-info {
+	padding-bottom: 10px;
+	border-bottom: 1px dotted #ccc;
+}
+.account-item .inn-btn {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	height: 0.36rem;
+	width: 0.36rem;
+	line-height: 0.36rem;
+	margin-top: -0.18rem; 
+	font-size: 0.12rem;
+	border-radius: 0;
+}
+.orderlist h2 {
+	font-size: 0.14rem;
+	background: #f4f4f4;
+	padding: 0.03rem 0.05rem;
+}
+.orderlist li {
+	border-bottom: 1px dotted #ccc;
+	padding: 0.1rem 0;
+	font-size: 0.12rem;
+	text-indent: 0.05rem;
+}
+.orderlist li .order-time {
+	color: #999;
+	margin-left: 0.2rem;
+}
+.inn-btn.reset-btn {
+	padding: 0 0.15rem;
+	background: #c9c9c9;
+	color: #fc5810;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	line-height: 0.36rem;
+	margin-top: -0.18rem;
+	border-radius: 0;
 }

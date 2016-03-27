@@ -21,5 +21,11 @@ export function configRouter (router) {
     '/orderView': {
         component: require('./components/guest/orderView.vue')
     },
+    '/account': {
+        component: require('./components/guest/account.vue')
+    },
+    '/reset': {
+        component: require('./components/guest/reset.vue')
+    },
   })
 }

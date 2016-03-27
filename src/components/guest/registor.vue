@@ -44,7 +44,7 @@ export default {
   },
   methods:{
     registor(){
-      var validPhone=/^1\d{10}$/; //手机正则
+      var validPhone=/^(13|14|15|18|17)[0-9]\d{8}$/; //手机正则
       var validMail=/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/; //邮箱正则
       if(this.regQuest.phone||this.regQuest.email){
         if(this.regQuest.phone){

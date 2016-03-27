@@ -3,7 +3,7 @@
 	    <h2 class="title">翰林客栈{{pageTitle}}</h2>
 	    <a v-link="{ path: '/home' }" class="back-link"><i class="icon-ar icon-b"></i></a>
 	    <template v-if="haslogin">
-	    	<a v-link="{ path: '/user' }" class="login-link"></a>	
+	    	<a v-link="{ path: '/account' }" class="login-link"></a>	
 	    </template>
 	    <template v-else>
 	    	<a v-link="{ path: '/login' }" class="login-link"></a>
@@ -19,7 +19,7 @@
 export default {
 	data () {
 		return {
-			haslogin:true,
+			haslogin:false,
 		}
 	},
 	methods: {

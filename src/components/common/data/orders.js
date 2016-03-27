@@ -16,7 +16,7 @@ module.exports={
 		  			"roomName":"呵呵房",
 		  			"price":"800",
 		  			createBy:"操作员",
-		  			orderItemStatus:2
+		  			orderItemStatus:0
 	  			},
 	  			{
 	  				"orderItemId":2,
@@ -47,7 +47,7 @@ module.exports={
 		  			"roomName":"呵呵房",
 		  			"price":"800",
 		  			createBy:"操作员",
-		  			orderItemStatus:2
+		  			orderItemStatus:1
 	  			},
 	  			{
 	  				"orderItemId":4,
