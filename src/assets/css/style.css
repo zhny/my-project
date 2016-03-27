@@ -589,4 +589,8 @@ body {
 	color: #fc5810;
 }
 
-
+p.errmsg {
+	margin-top: 10px;
+	font-size: 0.12rem;
+	color: red;
+}

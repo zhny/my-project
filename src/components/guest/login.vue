@@ -11,6 +11,7 @@
                   <span class="mark">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</span>
                   <input type="password" class="cont" placeholder="输入密码" v-model="loginQuest.pwd">
               </div>
+              <p class="errmsg">{{errMsg}}</p>
           </div>
           <div class="submit">
               <button type="submit" id="submit" class="inn-btn inn-btn-packed" @click="login">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</button>
@@ -22,6 +23,8 @@
 </template>
 
 <script>
+import api from '../common/api'
+
 export default {
   data () {
     return {
@@ -29,11 +32,21 @@ export default {
           account:'',
           pwd:'',
         },
+        errMsg:'',
     }
   },
   methods:{
     login(){
-      alert(this.loginQuest.pwd); 
+      // alert(this.loginQuest.pwd); 
+      if(this.loginQuest.account&&this.loginQuest.pwd){
+        var $this=this;
+        api.login(this.loginQuest,function(r){
+          $this.$router.go({ path: '/home' });
+        });
+      } else {
+        this.errMsg="请填写登录账号和密码";
+        return false;
+      }
     }
   },
 }
