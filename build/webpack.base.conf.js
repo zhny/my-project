@@ -4,6 +4,7 @@ module.exports = {
   entry: {
     app: './src/main.js',
     channel:'./src/channel.js',
+    fx:'./src/fx.js',             //新的分销商页面
     admin:'./src/admin.js'
   },
   output: {

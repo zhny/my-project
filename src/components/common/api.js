@@ -2,7 +2,7 @@ import cookieutil from './cookieutil'
 
 function wrapData(d){
 	var result={};
-	result.token="xxxxxx",
+	result.token="xxxxxx";
 	result.data=d;
 	return result;
 }
@@ -159,7 +159,7 @@ export default{
 			cb();
 		},1000);
 	},
-	mychannel(d,cb){
+	mychannel(d,cb){								//我得分销信息
 		setTimeout(function(){
 			cb(require('./data/mychannel'));
 		},500);

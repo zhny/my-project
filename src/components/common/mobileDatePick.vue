@@ -552,7 +552,7 @@ table {
 }
 
 .cov-date-monthly {
-  height: 50px;
+  height: 80px;
 }
 
 .cov-date-monthly > div {
@@ -561,7 +561,7 @@ table {
   margin: 0;
   vertical-align: middle;
   color: #fff;
-  height: 50px;
+  height: 80px;
   float: left;
   text-align: center;
   cursor: pointer;
@@ -671,14 +671,14 @@ table {
 
 .cov-datepicker {
   display: inline-block;
-  padding: 6px;
+/*  padding: 6px;
   line-height: 22px;
   font-size: 16px;
   border: 2px solid #fff;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   border-radius: 2px;
   font-family: 'Roboto';
-  color: #5F5F5F;
+  color: #5F5F5F;*/
 }
 
 .cov-vue-date {
@@ -747,6 +747,15 @@ table {
 <template>
   <div class="cov-vue-date">
     <div class="datepickbox">
+<!--       <input 
+      readonly="readonly"
+      type="text" 
+      title="input date" 
+      class="cov-datepicker" 
+      placeholder="{{option.placeholder}}" 
+      v-model="time" 
+      @click="showCheck" 
+      :style="option.inputStyle"/> -->
       <input 
       readonly="readonly"
       type="text" 
@@ -755,7 +764,7 @@ table {
       placeholder="{{option.placeholder}}" 
       v-model="time" 
       @click="showCheck" 
-      :style="option.inputStyle"/>
+      :style=""/>
     </div>
 
     <div class="datepicker-overlay"
