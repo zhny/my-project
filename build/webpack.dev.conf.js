@@ -37,6 +37,13 @@ config.plugins = (config.plugins || []).concat([
     //inject: true
   }),
   new HtmlWebpackPlugin({
+    filename: 'fx.html',
+    template: 'src/fx.html',
+    inject: 'body',
+    chunks: ['fx']
+    //inject: true
+  }),
+  new HtmlWebpackPlugin({
     filename: 'admin.html',
     template: 'src/admin.html',
     chunks: ['admin']

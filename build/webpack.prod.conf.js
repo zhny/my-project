@@ -73,6 +73,17 @@ config.plugins = (config.plugins || []).concat([
     }
   }),
   new HtmlWebpackPlugin({
+    filename: '../fx.html',
+    template: 'src/fx.html',
+    inject: 'body',
+    chunks: ['fx'],
+    minify: {
+      removeComments: true,
+      collapseWhitespace: true,
+      removeAttributeQuotes: true
+    }
+  }),
+  new HtmlWebpackPlugin({
     filename: '../admin.html',
     template: 'src/admin.html',
     inject: true,
