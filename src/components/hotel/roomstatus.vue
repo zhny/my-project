@@ -21,7 +21,6 @@
         </div>
 
 	</div>
-
 	<div id="leftpanel">
     	<div id="innroomdate" class="roomdom ">
             <div class="leftbox">
@@ -29,16 +28,17 @@
                 	<table cellpadding="0" cellspacing="0" border="0" t="pickerheader" style="width:100%;">
                 		<tbody>
                       <template v-for="type in curHotel.types">
-                			<tr>
+                			<tr v-if="type.rooms.length>0">
               						<th rowspan="{{type.rooms.length}}" scope="row" style="border:1px solid #ccc; border-top:none; border-left:none;width:50%;">
-                            <div class="count" title="{{type.typeName}}">{{type.typeName}}</div>
+                            <div class="count" title="{{type.NAME}}">{{type.NAME}}</div>
+
                           </th>
-              						<td><div class="num" style="width:50%;text-align:center;"><span>{{type.rooms[0].roomName}}</span> </div></td>
+              						<td><div class="num" style="width:50%;text-align:center;"><span>{{type.rooms[0].NAME}}</span> </div></td>
            						</tr>
-           						<tr v-for="room in type.rooms | limitBy type.rooms.length-1 1">
-              						<td><div class="num" style="width:50%;text-align:center;"><span>{{room.roomName}}</span> </div></td>
+           						<tr v-if="type.rooms.length>1" v-for="room in type.rooms | limitBy type.rooms.length-1 1">
+              						<td><div class="num" style="width:50%;text-align:center;"><span>{{room.NAME}}</span> </div></td>
             					</tr>
-                    </template>
+                      </template >
                 		</tbody>
                 	</table>
                 </div>
@@ -71,8 +71,8 @@
     <div class="inntab clx"> 
       <div class="wrap">
         <ul style="margin-left:0;" class="clx">
-          <li v-for="hotel in hotels" :class="{'on':(curHotel.hotelId==hotel.hotelId)}" @click="changeHotel(hotel)">
-            <a href="javascript:;">{{hotel.hotelName}}</a>
+          <li v-for="hotel in hotels" :class="{'on':(curHotel.ID==hotel.ID)}" @click="changeHotel(hotel)">
+            <a href="javascript:;">{{hotel.NAME}}</a>
           </li>
         </ul>
       </div>
@@ -92,6 +92,7 @@ import reserveRooms from './reserveRooms'             //加载订房
 import orderDetail from './orderDetail'               //订单详情
 import checkInRooms from './checkInRooms'             //入住
 import checkOutRooms from './checkOutRooms'           //退房
+import realApi from '../common/realApi'
 
 var theNow=new Date();
 export default {
@@ -102,7 +103,9 @@ export default {
     return {              
       hotels:[],                                        //所有客栈、房型
       curRooms:{},                                      //当前客栈的所有房间
-      curHotel:{},                                      //当前选中的客栈
+      curHotel:{
+        types:[]
+      },                                      //当前选中的客栈
       roomStatus:[],                                    //渲染页面的表格数据
       now:theNow,                                       //今天
       startDate:new Date(theNow.getFullYear(),theNow.getMonth(),theNow.getDate()-2),      //日历时间起
@@ -160,7 +163,12 @@ export default {
       this.endDate=new Date(this.endDate.getFullYear(),this.endDate.getMonth(),this.endDate.getDate()+10);
     },
     changeHotel(hotel){
-      this.curHotel=hotel;
+      var $this=this;
+      realApi.getTypesAndRooms({hotelid:hotel.ID},function(result){
+        hotel.isCur=true;
+        hotel.types=result;
+        $this.curHotel=hotel;
+      });
     },
     toggleCell(rk,ck,col){            //点击选中或不选中某格
       if(col.order==undefined){
@@ -232,11 +240,11 @@ export default {
     },
     renderHotels () {
       var $this=this;
-      api.getHotels({},function(r){
+
+      realApi.getHotels({},function(r){
         $this.hotels=r;
         if(r.length>0){
-          r[0].isCur=true;
-          $this.curHotel=r[0];
+          $this.changeHotel(r[0]);
         }
       });
     },
@@ -245,7 +253,7 @@ export default {
       for(var t in this.curHotel.types){
         for(var r in this.curHotel.types[t].rooms){
           var room=this.curHotel.types[t].rooms[r];
-          this.curRooms[room.roomId]=room;
+          this.curRooms[room.ID]=room;
         }
       }
     },
@@ -254,14 +262,14 @@ export default {
 
       this.curCell="";
       this.selectedCellStack=[];
-      if(this.curHotel.hotelId){                          //渲染空表格
+      if(this.curHotel.ID){                          //渲染空表格
         var types=this.curHotel.types;
         var emptyRoomStatus={};
         for(var _t in types){
           var t=types[_t];
           for(var _r in t.rooms){
             var r=t.rooms[_r];
-            var rk=r.roomId;
+            var rk=r.ID;
             emptyRoomStatus[rk]={};
             this.selectedCell[rk]={};
             for(var i=0;i<10;i++){
@@ -276,26 +284,27 @@ export default {
             }
           }
         }
-        api.roomstatus({
-            hotelId:$this.curHotel.hotelId,
-            fromDate:dateutil.format($this.startDate,'yyyy-MM-dd'),
-            endDate:dateutil.format($this.endDate,'yyyy-MM-dd')
-          },function(r){
-            var orders=r.roomStatus;
-            for(var i in orders){
-              var order=orders[i];
-              var _checkInDate=dateutil.parseDate(order.checkInDate);     //处理边界
-              if(_checkInDate<$this.startDate){                                  //如果入住时间小于开始时间,判断时间差，nights减相应值
-                var nightsDiff=($this.startDate-_checkInDate)/86400000;
-                order.nights-=nightsDiff;
-                var _startDateFormat=dateutil.format($this.startDate,'yyyy-MM-dd');
-                emptyRoomStatus[order.roomId][_startDateFormat]['order']=order;
-              }else{
-                emptyRoomStatus[order.roomId][order.checkInDate]['order']=order;
-              }
-            }
+        //  加载房态信息
+        // api.roomstatus({
+        //     hotelId:$this.curHotel.ID,
+        //     fromDate:dateutil.format($this.startDate,'yyyy-MM-dd'),
+        //     endDate:dateutil.format($this.endDate,'yyyy-MM-dd')
+        //   },function(r){
+        //     var orders=r.roomStatus;
+        //     for(var i in orders){
+        //       var order=orders[i];
+        //       var _checkInDate=dateutil.parseDate(order.checkInDate);     //处理边界
+        //       if(_checkInDate<$this.startDate){                                  //如果入住时间小于开始时间,判断时间差，nights减相应值
+        //         var nightsDiff=($this.startDate-_checkInDate)/86400000;
+        //         order.nights-=nightsDiff;
+        //         var _startDateFormat=dateutil.format($this.startDate,'yyyy-MM-dd');
+        //         emptyRoomStatus[order.roomId][_startDateFormat]['order']=order;
+        //       }else{
+        //         emptyRoomStatus[order.roomId][order.checkInDate]['order']=order;
+        //       }
+        //     }
             $this.roomStatus=emptyRoomStatus;
-        });
+        // });
       }
     },
     showDetailModal(orderId,roomId){

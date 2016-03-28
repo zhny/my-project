@@ -26,13 +26,13 @@
 						<div style="float:left; width:95px; margin-right:0; border-right:0;display:inline-block">
 							<datepick :value.sync="curOrder.items[$index].checkInDate"></datepick> 
 						</div>
-						<select v-model="curOrder.items[$index].roomId" @change="changeItemRoom($index)" style="width:100px;font-size:12px;float: left; margin-right:0; border-right:0;" >
-							<option v-for="(roomId,room) in curRooms" :value="roomId" :selected="roomId==item.roomId">{{room.roomName}}</option>
+						<select v-model="curOrder.items[$index].ID" @change="changeItemRoom($index)" style="width:100px;font-size:12px;float: left; margin-right:0; border-right:0;" >
+							<option v-for="(roomId,room) in curRooms" :value="roomId" :selected="roomId==item.ID">{{room.NAME}}</option>
 						</select>
 						<select v-model="curOrder.items[$index].nights" style="width:58px;font-size:12px;float: left; margin-right:0; border-right:0;" >
 							<option v-for="i in 10" :value="i+1">{{i+1}}晚</option>
 						</select>
-						<input type="text" v-model="curOrder.items[$index].roomTotalPrice" :value="item.price*item.nights" class="fl tr" style="width:50px; margin-left:-1px; margin-right:5px;">
+						<input type="text" v-model="curOrder.items[$index].roomTotalPrice" :value="item.PRICE*item.nights" class="fl tr" style="width:50px; margin-left:-1px; margin-right:5px;">
 						<a v-if="$index!=0" @click="deleteOrderItem(item)" title="删除该预订" class="del-book mr5 mt5" href="javascript:;"></a>
 						<a  title="添加预订" @click="addOrderItem(item)" class="add-book mt5" href="javascript:;"></a>
 					</div>
@@ -142,12 +142,14 @@ export default {
       		var result=0;
 		    for(var i in this.curOrder.items){
 		        var item=this.curOrder.items[i];
-		        result+=item.price*item.nights;
+		        result+=item.PRICE*item.nights;
 		    }
 		    return result;
     	}
 	},
 	ready () {
+		console.log(this.curRooms);
+		console.log(this.curOrder);
 		this.loadPayMethods();
 	},
 	methods:{
